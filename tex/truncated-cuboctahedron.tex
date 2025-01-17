@@ -24,62 +24,60 @@
 \begin{document}
 \tdplotsetmaincoords{70}{140}
 %
-\begin{tikzpicture}[tdplot_main_coords]
-	%
-	\pgfmathsetmacro{\escala}{2.0}
+\begin{tikzpicture}[tdplot_main_coords,scale=2.0]
 	% Coordinates of the vertices
-	\coordinate(UNO) at (-\escala*0.5, \escala*1.20711, -\escala*1.91421);
-	\coordinate(DOS) at (-\escala*0.5, \escala*1.20711, \escala*1.91421);
-	\coordinate(TRES) at (-\escala*0.5, -\escala*1.20711, -\escala*1.91421);
-	\coordinate(CUATRO) at (-\escala*0.5, -\escala*1.20711, \escala*1.91421);
-	\coordinate(CINCO) at (-\escala*0.5, -\escala*1.91421, \escala*1.20711);
-	\coordinate(SEIS) at (-\escala*0.5, -\escala*1.91421, -\escala*1.20711);
-	\coordinate(SIETE) at (-\escala*0.5, \escala*1.91421, \escala*1.20711);
-	\coordinate(OCHO) at (-\escala*0.5, \escala*1.91421, -\escala*1.20711);
-	\coordinate(NUEVE) at (\escala*0.5, \escala*1.20711, -\escala*1.91421);
-	\coordinate(DIEZ) at (\escala*0.5, \escala*1.20711, \escala*1.91421);
+	\coordinate(UNO) at (-0.5, 1.20711, -1.91421);
+	\coordinate(DOS) at (-0.5, 1.20711, 1.91421);
+	\coordinate(TRES) at (-0.5, -1.20711, -1.91421);
+	\coordinate(CUATRO) at (-0.5, -1.20711, 1.91421);
+	\coordinate(CINCO) at (-0.5, -1.91421, 1.20711);
+	\coordinate(SEIS) at (-0.5, -1.91421, -1.20711);
+	\coordinate(SIETE) at (-0.5, 1.91421, 1.20711);
+	\coordinate(OCHO) at (-0.5, 1.91421, -1.20711);
+	\coordinate(NUEVE) at (0.5, 1.20711, -1.91421);
+	\coordinate(DIEZ) at (0.5, 1.20711, 1.91421);
 	%
-	\coordinate(ONCE) at (\escala*0.5, -\escala*1.20711, -\escala*1.91421);
-	\coordinate(DOCE) at (\escala*0.5, -\escala*1.20711, \escala*1.91421);
-	\coordinate(TRECE) at (\escala*0.5, -\escala*1.91421, \escala*1.20711);
-	\coordinate(CATORCE) at (\escala*0.5, -\escala*1.91421, -\escala*1.20711);
-	\coordinate(QUINCE) at (\escala*0.5, \escala*1.91421, \escala*1.20711);
-	\coordinate(DIECISEIS) at (\escala*0.5, \escala*1.91421, -\escala*1.20711);
-	\coordinate(DIECISIETE) at (\escala*1.20711, -\escala*0.5, -\escala*1.91421);
-	\coordinate(DIECIOCHO) at (\escala*1.20711, -\escala*0.5, \escala*1.91421);
-	\coordinate(DIECINUEVE) at (\escala*1.20711, \escala*0.5, -\escala*1.91421);
-	\coordinate(VEINTE) at (\escala*1.20711, \escala*0.5, \escala*1.91421);
+	\coordinate(ONCE) at (0.5, -1.20711, -1.91421);
+	\coordinate(DOCE) at (0.5, -1.20711, 1.91421);
+	\coordinate(TRECE) at (0.5, -1.91421, 1.20711);
+	\coordinate(CATORCE) at (0.5, -1.91421, -1.20711);
+	\coordinate(QUINCE) at (0.5, 1.91421, 1.20711);
+	\coordinate(DIECISEIS) at (0.5, 1.91421, -1.20711);
+	\coordinate(DIECISIETE) at (1.20711, -0.5, -1.91421);
+	\coordinate(DIECIOCHO) at (1.20711, -0.5, 1.91421);
+	\coordinate(DIECINUEVE) at (1.20711, 0.5, -1.91421);
+	\coordinate(VEINTE) at (1.20711, 0.5, 1.91421);
 	%
-	\coordinate(VEINTIUNO) at (\escala*1.20711, -\escala*1.91421, -\escala*0.5);
-	\coordinate(VEINTIDOS) at (\escala*1.20711, -\escala*1.91421, \escala*0.5);
-	\coordinate(VEINTITRES) at (\escala*1.20711, \escala*1.91421, -\escala*0.5);
-	\coordinate(VEINTICUATRO) at (\escala*1.20711, \escala*1.91421, \escala*0.5);
-	\coordinate(VEINTICINCO) at (-\escala*1.20711, -\escala*0.5, -\escala*1.91421);
-	\coordinate(VEINTISEIS) at (-\escala*1.20711, -\escala*0.5, \escala*1.91421);
-	\coordinate(VEINTISIETE) at (-\escala*1.20711, \escala*0.5, -\escala*1.91421);
-	\coordinate(VEINTIOCHO) at (-\escala*1.20711, \escala*0.5, \escala*1.91421);
-	\coordinate(VEINTINUEVE) at (-\escala*1.20711, -\escala*1.91421, -\escala*0.5);
-	\coordinate(TREINTA) at (-\escala*1.20711, -\escala*1.91421, \escala*0.5);
+	\coordinate(VEINTIUNO) at (1.20711, -1.91421, -0.5);
+	\coordinate(VEINTIDOS) at (1.20711, -1.91421, 0.5);
+	\coordinate(VEINTITRES) at (1.20711, 1.91421, -0.5);
+	\coordinate(VEINTICUATRO) at (1.20711, 1.91421, 0.5);
+	\coordinate(VEINTICINCO) at (-1.20711, -0.5, -1.91421);
+	\coordinate(VEINTISEIS) at (-1.20711, -0.5, 1.91421);
+	\coordinate(VEINTISIETE) at (-1.20711, 0.5, -1.91421);
+	\coordinate(VEINTIOCHO) at (-1.20711, 0.5, 1.91421);
+	\coordinate(VEINTINUEVE) at (-1.20711, -1.91421, -0.5);
+	\coordinate(TREINTA) at (-1.20711, -1.91421, 0.5);
 	%
-	\coordinate(TREINTAYUNO) at (-\escala*1.20711, \escala*1.91421, -\escala*0.5);
-	\coordinate(TREINTAYDOS) at (-\escala*1.20711, \escala*1.91421, \escala*0.5);
-	\coordinate(TREINTAYTRES) at (-\escala*1.91421, -\escala*0.5, \escala*1.20711);
-	\coordinate(TREINTAYCUATRO) at (-\escala*1.91421, -\escala*0.5, -\escala*1.20711);
-	\coordinate(TREINTAYCINCO) at (-\escala*1.91421, \escala*0.5, \escala*1.20711);
-	\coordinate(TREINTAYSEIS) at (-\escala*1.91421, \escala*0.5, -\escala*1.20711);
-	\coordinate(TREINTAYSIETE) at (-\escala*1.91421, \escala*1.20711, -\escala*0.5);
-	\coordinate(TREINTAYOCHO) at (-\escala*1.91421, \escala*1.20711, \escala*0.5);
-	\coordinate(TREINTAYNUEVE) at (-\escala*1.91421, -\escala*1.20711, -\escala*0.5);
-	\coordinate(CUARENTA) at (-\escala*1.91421, -\escala*1.20711, \escala*0.5);
+	\coordinate(TREINTAYUNO) at (-1.20711, 1.91421, -0.5);
+	\coordinate(TREINTAYDOS) at (-1.20711, 1.91421, 0.5);
+	\coordinate(TREINTAYTRES) at (-1.91421, -0.5, 1.20711);
+	\coordinate(TREINTAYCUATRO) at (-1.91421, -0.5, -1.20711);
+	\coordinate(TREINTAYCINCO) at (-1.91421, 0.5, 1.20711);
+	\coordinate(TREINTAYSEIS) at (-1.91421, 0.5, -1.20711);
+	\coordinate(TREINTAYSIETE) at (-1.91421, 1.20711, -0.5);
+	\coordinate(TREINTAYOCHO) at (-1.91421, 1.20711, 0.5);
+	\coordinate(TREINTAYNUEVE) at (-1.91421, -1.20711, -0.5);
+	\coordinate(CUARENTA) at (-1.91421, -1.20711, 0.5);
 	%
-	\coordinate(CUARENTAYUNO) at (\escala*1.91421, -\escala*0.5, \escala*1.20711);
-	\coordinate(CUARENTAYDOS) at (\escala*1.91421, -\escala*0.5, -\escala*1.20711);
-	\coordinate(CUARENTAYTRES) at (\escala*1.91421, \escala*0.5, \escala*1.20711);
-	\coordinate(CUARENTAYCUATRO) at (\escala*1.91421, \escala*0.5, -\escala*1.20711);
-	\coordinate(CUARENTAYCINCO) at (\escala*1.91421, \escala*1.20711, -\escala*0.5);
-	\coordinate(CUARENTAYSEIS) at (\escala*1.91421, \escala*1.20711, \escala*0.5);
-	\coordinate(CUARENTAYSIETE) at (\escala*1.91421, -\escala*1.20711, -\escala*0.5);
-	\coordinate(CUARENTAYOCHO) at (\escala*1.91421, -\escala*1.20711, \escala*0.5);
+	\coordinate(CUARENTAYUNO) at (1.91421, -0.5, 1.20711);
+	\coordinate(CUARENTAYDOS) at (1.91421, -0.5, -1.20711);
+	\coordinate(CUARENTAYTRES) at (1.91421, 0.5, 1.20711);
+	\coordinate(CUARENTAYCUATRO) at (1.91421, 0.5, -1.20711);
+	\coordinate(CUARENTAYCINCO) at (1.91421, 1.20711, -0.5);
+	\coordinate(CUARENTAYSEIS) at (1.91421, 1.20711, 0.5);
+	\coordinate(CUARENTAYSIETE) at (1.91421, -1.20711, -0.5);
+	\coordinate(CUARENTAYOCHO) at (1.91421, -1.20711, 0.5);
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CINCO) -- (TREINTA) -- (VEINTINUEVE) -- (SEIS) 
 			-- (CATORCE) -- (VEINTIUNO) -- (VEINTIDOS) -- (TRECE) -- (CINCO);	
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (NUEVE) -- (DIECINUEVE) -- (DIECISIETE) -- (ONCE) 

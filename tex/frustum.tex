@@ -45,7 +45,7 @@
 		\pgfmathsetmacro{\pyi}{\r*sin((\angulo)*\vertice+\anguloi)}
 		\coordinate (H\vertice) at (\pxi,\pyi,\h);
 	}
-	% Draw the faces of the polyhedron
+	% The faces of the polyhedron
 	\foreach \vertice in {1,2,...,\n}{
 		\pgfmathsetmacro{\vf}{\vertice+1}
 		\ifthenelse{\vertice<\n}{

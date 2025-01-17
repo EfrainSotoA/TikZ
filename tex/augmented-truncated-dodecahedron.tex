@@ -24,82 +24,79 @@
 \begin{document}
 \tdplotsetmaincoords{80}{115}
 %
-\begin{tikzpicture}[tdplot_main_coords]
-	%
-	\pgfmathsetmacro{\escala}{0.75}
-	\pgfmathsetmacro{\r}{\escala}
+\begin{tikzpicture}[tdplot_main_coords,scale=0.75]
 	% Coordinates of the vertices
-	\coordinate(1) at (\escala*0., -\escala*1.61803, \escala*2.4899);
-	\coordinate(2) at (\escala*0., -\escala*1.61803, -\escala*2.4899);
-	\coordinate(3) at (\escala*0., \escala*1.61803, \escala*2.4899);
-	\coordinate(4) at (\escala*0., \escala*1.61803, -\escala*2.4899);
-	\coordinate(5) at (\escala*0.425325, -\escala*2.92705, \escala*0.262866);
-	\coordinate(6) at (\escala*0.425325, \escala*2.92705, \escala*0.262866);
-	\coordinate(7) at (\escala*0.688191, -\escala*2.11803, \escala*1.96417);
-	\coordinate(8) at (\escala*0.688191, \escala*2.11803, \escala*1.96417);
-	\coordinate(9) at (-\escala*2.75276, \escala*0., -\escala*1.11352);
-	\coordinate(10) at (-\escala*2.06457, -\escala*2.11803, \escala*0.262866);
+	\coordinate(1) at (0., -1.61803, 2.4899);
+	\coordinate(2) at (0., -1.61803, -2.4899);
+	\coordinate(3) at (0., 1.61803, 2.4899);
+	\coordinate(4) at (0., 1.61803, -2.4899);
+	\coordinate(5) at (0.425325, -2.92705, 0.262866);
+	\coordinate(6) at (0.425325, 2.92705, 0.262866);
+	\coordinate(7) at (0.688191, -2.11803, 1.96417);
+	\coordinate(8) at (0.688191, 2.11803, 1.96417);
+	\coordinate(9) at (-2.75276, 0., -1.11352);
+	\coordinate(10) at (-2.06457, -2.11803, 0.262866);
 	%
-	\coordinate(11) at (-\escala*2.06457, \escala*2.11803, \escala*0.262866);
-	\coordinate(12) at (-\escala*1.37638, -\escala*2.61803, -\escala*0.262866);
-	\coordinate(13) at (-\escala*1.37638, \escala*2.61803, -\escala*0.262866);
-	\coordinate(14) at (-\escala*0.688191, -\escala*2.11803, -\escala*1.96417);
-	\coordinate(15) at (-\escala*0.688191, \escala*2.11803, -\escala*1.96417);
-	\coordinate(16) at (\escala*1.37638, -\escala*2.61803, \escala*0.262866);
-	\coordinate(17) at (\escala*1.37638, \escala*2.61803, \escala*0.262866);
-	\coordinate(18) at (\escala*2.75276, \escala*0., \escala*1.11352);
-	\coordinate(19) at (\escala*1.80171, -\escala*1.30902, -\escala*1.96417);
-	\coordinate(20) at (\escala*1.80171, \escala*1.30902, -\escala*1.96417);
+	\coordinate(11) at (-2.06457, 2.11803, 0.262866);
+	\coordinate(12) at (-1.37638, -2.61803, -0.262866);
+	\coordinate(13) at (-1.37638, 2.61803, -0.262866);
+	\coordinate(14) at (-0.688191, -2.11803, -1.96417);
+	\coordinate(15) at (-0.688191, 2.11803, -1.96417);
+	\coordinate(16) at (1.37638, -2.61803, 0.262866);
+	\coordinate(17) at (1.37638, 2.61803, 0.262866);
+	\coordinate(18) at (2.75276, 0., 1.11352);
+	\coordinate(19) at (1.80171, -1.30902, -1.96417);
+	\coordinate(20) at (1.80171, 1.30902, -1.96417);
 	%
-	\coordinate(21) at (\escala*2.06457, -\escala*2.11803, -\escala*0.262866);
-	\coordinate(22) at (\escala*2.06457, \escala*2.11803, -\escala*0.262866);
-	\coordinate(23) at (\escala*2.22703, \escala*0., \escala*1.96417);
-	\coordinate(24) at (\escala*2.22703, -\escala*1.61803, -\escala*1.11352);
-	\coordinate(25) at (\escala*2.22703, \escala*1.61803, -\escala*1.11352);
-	\coordinate(26) at (-\escala*2.65236, -\escala*1.30902, \escala*0.262866);
-	\coordinate(27) at (-\escala*2.65236, \escala*1.30902, \escala*0.262866);
-	\coordinate(28) at (\escala*2.65236, -\escala*1.30902, -\escala*0.262866);
-	\coordinate(29) at (\escala*2.65236, \escala*1.30902, -\escala*0.262866);
-	\coordinate(30) at (\escala*2.91522, -\escala*0.5, \escala*0.262866);
+	\coordinate(21) at (2.06457, -2.11803, -0.262866);
+	\coordinate(22) at (2.06457, 2.11803, -0.262866);
+	\coordinate(23) at (2.22703, 0., 1.96417);
+	\coordinate(24) at (2.22703, -1.61803, -1.11352);
+	\coordinate(25) at (2.22703, 1.61803, -1.11352);
+	\coordinate(26) at (-2.65236, -1.30902, 0.262866);
+	\coordinate(27) at (-2.65236, 1.30902, 0.262866);
+	\coordinate(28) at (2.65236, -1.30902, -0.262866);
+	\coordinate(29) at (2.65236, 1.30902, -0.262866);
+	\coordinate(30) at (2.91522, -0.5, 0.262866);
 	%
-	\coordinate(31) at (\escala*2.91522, \escala*0.5, \escala*0.262866);
-	\coordinate(32) at (-\escala*2.91522, -\escala*0.5, -\escala*0.262866);
-	\coordinate(33) at (-\escala*2.91522, \escala*0.5, -\escala*0.262866);
-	\coordinate(34) at (\escala*0.951057, -\escala*1.30902, \escala*2.4899);
-	\coordinate(35) at (\escala*0.951057, -\escala*1.30902, -\escala*2.4899);
-	\coordinate(36) at (\escala*0.951057, \escala*1.30902, \escala*2.4899);
-	\coordinate(37) at (\escala*0.951057, \escala*1.30902, -\escala*2.4899);
-	\coordinate(38) at (\escala*0.850651, -\escala*2.61803, \escala*1.11352);
-	\coordinate(39) at (\escala*0.850651, \escala*2.61803, \escala*1.11352);
-	\coordinate(40) at (-\escala*0.951057, -\escala*1.30902, \escala*2.4899);
+	\coordinate(31) at (2.91522, 0.5, 0.262866);
+	\coordinate(32) at (-2.91522, -0.5, -0.262866);
+	\coordinate(33) at (-2.91522, 0.5, -0.262866);
+	\coordinate(34) at (0.951057, -1.30902, 2.4899);
+	\coordinate(35) at (0.951057, -1.30902, -2.4899);
+	\coordinate(36) at (0.951057, 1.30902, 2.4899);
+	\coordinate(37) at (0.951057, 1.30902, -2.4899);
+	\coordinate(38) at (0.850651, -2.61803, 1.11352);
+	\coordinate(39) at (0.850651, 2.61803, 1.11352);
+	\coordinate(40) at (-0.951057, -1.30902, 2.4899);
 	%
-	\coordinate(41) at (-\escala*0.951057, -\escala*1.30902, -\escala*2.4899);
-	\coordinate(42) at (-\escala*0.951057, \escala*1.30902, \escala*2.4899);
-	\coordinate(43) at (-\escala*0.951057, \escala*1.30902, -\escala*2.4899);
-	\coordinate(44) at (-\escala*1.53884, -\escala*0.5, \escala*2.4899);
-	\coordinate(45) at (-\escala*1.53884, -\escala*0.5, -\escala*2.4899);
-	\coordinate(46) at (-\escala*1.53884, \escala*0.5, \escala*2.4899);
-	\coordinate(47) at (-\escala*1.53884, \escala*0.5, -\escala*2.4899);
-	\coordinate(48) at (\escala*1.53884, -\escala*0.5, \escala*2.4899);
-	\coordinate(49) at (\escala*1.53884, -\escala*0.5, -\escala*2.4899);
-	\coordinate(50) at (\escala*1.53884, \escala*0.5, \escala*2.4899);
+	\coordinate(41) at (-0.951057, -1.30902, -2.4899);
+	\coordinate(42) at (-0.951057, 1.30902, 2.4899);
+	\coordinate(43) at (-0.951057, 1.30902, -2.4899);
+	\coordinate(44) at (-1.53884, -0.5, 2.4899);
+	\coordinate(45) at (-1.53884, -0.5, -2.4899);
+	\coordinate(46) at (-1.53884, 0.5, 2.4899);
+	\coordinate(47) at (-1.53884, 0.5, -2.4899);
+	\coordinate(48) at (1.53884, -0.5, 2.4899);
+	\coordinate(49) at (1.53884, -0.5, -2.4899);
+	\coordinate(50) at (1.53884, 0.5, 2.4899);
 	%
-	\coordinate(51) at (\escala*1.53884, \escala*0.5, -\escala*2.4899);
-	\coordinate(52) at (-\escala*2.22703, \escala*0., -\escala*1.96417);
-	\coordinate(53) at (-\escala*2.22703, -\escala*1.61803, \escala*1.11352);
-	\coordinate(54) at (-\escala*2.22703, \escala*1.61803, \escala*1.11352);
-	\coordinate(55) at (-\escala*0.850651, -\escala*2.61803, -\escala*1.11352);
-	\coordinate(56) at (-\escala*0.850651, \escala*2.61803, -\escala*1.11352);
-	\coordinate(57) at (-\escala*1.80171, -\escala*1.30902, \escala*1.96417);
-	\coordinate(58) at (-\escala*1.80171, \escala*1.30902, \escala*1.96417);
-	\coordinate(59) at (-\escala*0.425325, -\escala*2.92705, -\escala*0.262866);
-	\coordinate(60) at (-\escala*0.425325, \escala*2.92705, -\escala*0.262866);
+	\coordinate(51) at (1.53884, 0.5, -2.4899);
+	\coordinate(52) at (-2.22703, 0., -1.96417);
+	\coordinate(53) at (-2.22703, -1.61803, 1.11352);
+	\coordinate(54) at (-2.22703, 1.61803, 1.11352);
+	\coordinate(55) at (-0.850651, -2.61803, -1.11352);
+	\coordinate(56) at (-0.850651, 2.61803, -1.11352);
+	\coordinate(57) at (-1.80171, -1.30902, 1.96417);
+	\coordinate(58) at (-1.80171, 1.30902, 1.96417);
+	\coordinate(59) at (-0.425325, -2.92705, -0.262866);
+	\coordinate(60) at (-0.425325, 2.92705, -0.262866);
 	%
-	\coordinate(61) at (-\escala*0.262866, \escala*0.809017, \escala*3.01563);
-	\coordinate(62) at (-\escala*0.850651, \escala*0., \escala*3.01563);
-	\coordinate(63) at (-\escala*0.262866, -\escala*0.809017, \escala*3.01563);
-	\coordinate(64) at (\escala*0.688191, -\escala*0.5, \escala*3.01563);
-	\coordinate(65) at (\escala*0.688191, \escala*0.5, \escala*3.01563);
+	\coordinate(61) at (-0.262866, 0.809017, 3.01563);
+	\coordinate(62) at (-0.850651, 0., 3.01563);
+	\coordinate(63) at (-0.262866, -0.809017, 3.01563);
+	\coordinate(64) at (0.688191, -0.5, 3.01563);
+	\coordinate(65) at (0.688191, 0.5, 3.01563);
 	% Faces of the polyhedron
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (63) -- (40) -- cycle;
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (14) -- (41) -- cycle;

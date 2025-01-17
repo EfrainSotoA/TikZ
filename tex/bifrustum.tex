@@ -46,7 +46,7 @@
 		\coordinate (H\vertice) at (\pxi,\pyi,\h);
 		\coordinate (P\vertice) at (\pxi,\pyi,-\h);
 	}
-	% Drw the frustum
+	% The frustum
 	\foreach \vertice in {1,2,...,\n}{
 		\pgfmathsetmacro{\vf}{\vertice+1}
 		\ifthenelse{\vertice<\n}{

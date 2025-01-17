@@ -24,26 +24,23 @@
 \begin{document}
 \tdplotsetmaincoords{80}{35}
 %
-\begin{tikzpicture}[tdplot_main_coords]
-	%
-	\pgfmathsetmacro{\escala}{2.5}
-	\pgfmathsetmacro{\r}{\escala}
+\begin{tikzpicture}[tdplot_main_coords,scale=2.5]
 	% Coordinates of the vertices
-	\coordinate(1) at (-\escala*1.37638, \escala*0., \escala*0.);
-	\coordinate(2) at (-\escala*0.850651, \escala*0., -\escala*0.850651);
-	\coordinate(3) at (-\escala*0.850651, \escala*0., \escala*0.850651);
-	\coordinate(4) at (-\escala*0.525731, -\escala*0.525731, \escala*0.);
-	\coordinate(5) at (-\escala*0.525731, \escala*0.525731, \escala*0.);
-	\coordinate(6) at (\escala*0., -\escala*0.525731, -\escala*0.850651);
-	\coordinate(7) at (\escala*0., -\escala*0.525731, \escala*0.850651);
-	\coordinate(8) at (\escala*0., \escala*0.525731, -\escala*0.850651);
-	\coordinate(9) at (\escala*0., \escala*0.525731, \escala*0.850651);
-	\coordinate(10) at (\escala*0.525731, -\escala*0.525731, \escala*0.);
+	\coordinate(1) at (-1.37638, 0., 0.);
+	\coordinate(2) at (-0.850651, 0., -0.850651);
+	\coordinate(3) at (-0.850651, 0., 0.850651);
+	\coordinate(4) at (-0.525731, -0.525731, 0.);
+	\coordinate(5) at (-0.525731, 0.525731, 0.);
+	\coordinate(6) at (0., -0.525731, -0.850651);
+	\coordinate(7) at (0., -0.525731, 0.850651);
+	\coordinate(8) at (0., 0.525731, -0.850651);
+	\coordinate(9) at (0., 0.525731, 0.850651);
+	\coordinate(10) at (0.525731, -0.525731, 0.);
 	%
-	\coordinate(11) at (\escala*0.525731, \escala*0.525731, \escala*0.);
-	\coordinate(12) at (\escala*0.850651, \escala*0., -\escala*0.850651);
-	\coordinate(13) at (\escala*0.850651, \escala*0., \escala*0.850651);
-	\coordinate(14) at (\escala*1.37638, \escala*0., \escala*0.);
+	\coordinate(11) at (0.525731, 0.525731, 0.);
+	\coordinate(12) at (0.850651, 0., -0.850651);
+	\coordinate(13) at (0.850651, 0., 0.850651);
+	\coordinate(14) at (1.37638, 0., 0.);
 	% Faces of the polyhedron
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (13) -- (14) -- (11) -- cycle;
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (11) -- (8) -- (5) -- cycle;

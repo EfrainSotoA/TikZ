@@ -24,48 +24,45 @@
 \begin{document}
 \tdplotsetmaincoords{80}{115}
 %
-\begin{tikzpicture}[tdplot_main_coords]
-	%
-	\pgfmathsetmacro{\escala}{1.25}
-	\pgfmathsetmacro{\r}{\escala}
+\begin{tikzpicture}[tdplot_main_coords,scale=1.25]
 	\pgfmathsetmacro{\cero}{(3.0 + 2.0 * sqrt(3.0)) / 6.0}
 	\pgfmathsetmacro{\uno}{(3.0 + 4.0 * sqrt(3.0)) / 6.0}
 	% Coordinates of the vertices
-	\coordinate(0) at (\escala*0.5, \escala*0.5, \escala*\uno);
-	\coordinate(1) at (\escala*0.5, \escala*0.5, -\escala*\uno);
-	\coordinate(2) at (\escala*0.5, -\escala*0.5, \escala*\uno);
-	\coordinate(3) at (\escala*0.5, -\escala*0.5, -\escala*\uno);
-	\coordinate(4) at (-\escala*0.5, \escala*0.5, \escala*\uno);
-	\coordinate(5) at (-\escala*0.5, \escala*0.5, -\escala*\uno);
-	\coordinate(6) at (-\escala*0.5, -\escala*0.5, \escala*\uno);
-	\coordinate(7) at (-\escala*0.5, -\escala*0.5, -\escala*\uno);
-	\coordinate(8) at (\escala*\uno, \escala*0.5, \escala*0.5);
-	\coordinate(9) at (\escala*\uno, \escala*0.5, -\escala*0.5);
-	\coordinate(10) at (\escala*\uno, -\escala*0.5, \escala*0.5);
+	\coordinate(0) at (0.5, 0.5, \uno);
+	\coordinate(1) at (0.5, 0.5, -\uno);
+	\coordinate(2) at (0.5, -0.5, \uno);
+	\coordinate(3) at (0.5, -0.5, -\uno);
+	\coordinate(4) at (-0.5, 0.5, \uno);
+	\coordinate(5) at (-0.5, 0.5, -\uno);
+	\coordinate(6) at (-0.5, -0.5, \uno);
+	\coordinate(7) at (-0.5, -0.5, -\uno);
+	\coordinate(8) at (\uno, 0.5, 0.5);
+	\coordinate(9) at (\uno, 0.5, -0.5);
+	\coordinate(10) at (\uno, -0.5, 0.5);
 	%
-	\coordinate(11) at (\escala*\uno, -\escala*0.5, -\escala*0.5);
-	\coordinate(12) at (-\escala*\uno, \escala*0.5, \escala*0.5);
-	\coordinate(13) at (-\escala*\uno, \escala*0.5, -\escala*0.5);
-	\coordinate(14) at (-\escala*\uno, -\escala*0.5, \escala*0.5);
-	\coordinate(15) at (-\escala*\uno, -\escala*0.5, -\escala*0.5);
-	\coordinate(16) at (\escala*0.5, \escala*\uno, \escala*0.5);
-	\coordinate(17) at (\escala*0.5, \escala*\uno, -\escala*0.5);
-	\coordinate(18) at (\escala*0.5, -\escala*\uno, \escala*0.5);
-	\coordinate(19) at (\escala*0.5, -\escala*\uno, -\escala*0.5);
-	\coordinate(20) at (-\escala*0.5, \escala*\uno, \escala*0.5);
+	\coordinate(11) at (\uno, -0.5, -0.5);
+	\coordinate(12) at (-\uno, 0.5, 0.5);
+	\coordinate(13) at (-\uno, 0.5, -0.5);
+	\coordinate(14) at (-\uno, -0.5, 0.5);
+	\coordinate(15) at (-\uno, -0.5, -0.5);
+	\coordinate(16) at (0.5, \uno, 0.5);
+	\coordinate(17) at (0.5, \uno, -0.5);
+	\coordinate(18) at (0.5, -\uno, 0.5);
+	\coordinate(19) at (0.5, -\uno, -0.5);
+	\coordinate(20) at (-0.5, \uno, 0.5);
 	%
-	\coordinate(21) at (-\escala*0.5, \escala*\uno, -\escala*0.5);
-	\coordinate(22) at (-\escala*0.5, -\escala*\uno, \escala*0.5);
-	\coordinate(23) at (-\escala*0.5, -\escala*\uno, -\escala*0.5);
-	\coordinate(24) at (\escala*\cero, \escala*\cero, \escala*\cero);
-	\coordinate(25) at (\escala*\cero, \escala*\cero, -\escala*\cero);
-	\coordinate(26) at (\escala*\cero, -\escala*\cero, \escala*\cero);
-	\coordinate(27) at (\escala*\cero, -\escala*\cero, -\escala*\cero);
-	\coordinate(28) at (-\escala*\cero, \escala*\cero, \escala*\cero);
-	\coordinate(29) at (-\escala*\cero, \escala*\cero, -\escala*\cero);
-	\coordinate(30) at (-\escala*\cero, -\escala*\cero, \escala*\cero);
+	\coordinate(21) at (-0.5, \uno, -0.5);
+	\coordinate(22) at (-0.5, -\uno, 0.5);
+	\coordinate(23) at (-0.5, -\uno, -0.5);
+	\coordinate(24) at (\cero, \cero, \cero);
+	\coordinate(25) at (\cero, \cero, -\cero);
+	\coordinate(26) at (\cero, -\cero, \cero);
+	\coordinate(27) at (\cero, -\cero, -\cero);
+	\coordinate(28) at (-\cero, \cero, \cero);
+	\coordinate(29) at (-\cero, \cero, -\cero);
+	\coordinate(30) at (-\cero, -\cero, \cero);
 	%
-	\coordinate(31) at (-\escala*\cero, -\escala*\cero, -\escala*\cero);
+	\coordinate(31) at (-\cero, -\cero, -\cero);
 	% Faces of the polyhedron
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (27) -- (19) -- (23) -- (31) -- (7) -- (3) -- cycle;
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (29) -- (5) -- (7) -- (31) -- (15) -- (13) -- cycle;

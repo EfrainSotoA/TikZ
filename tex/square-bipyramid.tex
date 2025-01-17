@@ -41,7 +41,7 @@
 		\pgfmathsetmacro{\pyi}{\r*sin((\angulo)*\vertice+\anguloi)}
 		\coordinate (P\vertice) at (\pxi,\pyi,0);
 	}
-	% Draw the polyhedron
+	% Faces of the polyhedron
 	% The tringular faces
 	\foreach \vertice in {1,2,...,\n}{
 		\pgfmathsetmacro{\vf}{\vertice+1}

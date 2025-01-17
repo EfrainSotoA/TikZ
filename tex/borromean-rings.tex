@@ -25,49 +25,46 @@
 \tdplotsetmaincoords{65}{105}
 %
 \begin{tikzpicture}[tdplot_main_coords]
-	%
-	\pgfmathsetmacro{\escala}{1.0}
-	\pgfmathsetmacro{\r}{\escala}
 	% Coordenadas de los vértices
-	\coordinate(0) at (\escala*0, \escala*3, \escala*5);
-	\coordinate(1) at (\escala*0, \escala*3, -\escala*5);
-	\coordinate(2) at (\escala*0, -\escala*3, \escala*5);
-	\coordinate(3) at (\escala*0, -\escala*3, -\escala*5);
-	\coordinate(4) at (\escala*1, \escala*2, \escala*4);
-	\coordinate(5) at (\escala*1, \escala*2, -\escala*4);
-	\coordinate(6) at (\escala*1, -\escala*2, \escala*4);
-	\coordinate(7) at (\escala*1, -\escala*2, -\escala*4);
-	\coordinate(8) at (-\escala*1, \escala*2, \escala*4);
-	\coordinate(9) at (-\escala*1, \escala*2, -\escala*4);
-	\coordinate(10) at (-\escala*1, -\escala*2, \escala*4);
+	\coordinate(0) at (0, 3, 5);
+	\coordinate(1) at (0, 3, -5);
+	\coordinate(2) at (0, -3, 5);
+	\coordinate(3) at (0, -3, -5);
+	\coordinate(4) at (1, 2, 4);
+	\coordinate(5) at (1, 2, -4);
+	\coordinate(6) at (1, -2, 4);
+	\coordinate(7) at (1, -2, -4);
+	\coordinate(8) at (-1, 2, 4);
+	\coordinate(9) at (-1, 2, -4);
+	\coordinate(10) at (-1, -2, 4);
 	%
-	\coordinate(11) at (-\escala*1, -\escala*2, -\escala*4);
-	\coordinate(12) at (\escala*3, \escala*5, \escala*0);
-	\coordinate(13) at (\escala*3, -\escala*5, \escala*0);
-	\coordinate(14) at (-\escala*3, \escala*5, \escala*0);
-	\coordinate(15) at (-\escala*3, -\escala*5, \escala*0);
-	\coordinate(16) at (\escala*2, \escala*4, \escala*1);
-	\coordinate(17) at (\escala*2, -\escala*4, \escala*1);
-	\coordinate(18) at (-\escala*2, \escala*4, \escala*1);
-	\coordinate(19) at (-\escala*2, -\escala*4, \escala*1);
-	\coordinate(20) at (\escala*2, \escala*4, -\escala*1);
+	\coordinate(11) at (-1, -2, -4);
+	\coordinate(12) at (3, 5, 0);
+	\coordinate(13) at (3, -5, 0);
+	\coordinate(14) at (-3, 5, 0);
+	\coordinate(15) at (-3, -5, 0);
+	\coordinate(16) at (2, 4, 1);
+	\coordinate(17) at (2, -4, 1);
+	\coordinate(18) at (-2, 4, 1);
+	\coordinate(19) at (-2, -4, 1);
+	\coordinate(20) at (2, 4, -1);
 	%
-	\coordinate(21) at (\escala*2, -\escala*4, -\escala*1);
-	\coordinate(22) at (-\escala*2, \escala*4, -\escala*1);
-	\coordinate(23) at (-\escala*2, -\escala*4, -\escala*1);
-	\coordinate(24) at (\escala*5, \escala*0, \escala*3);
-	\coordinate(25) at (-\escala*5, \escala*0, \escala*3);
-	\coordinate(26) at (\escala*5, \escala*0, -\escala*3);
-	\coordinate(27) at (-\escala*5, \escala*0, -\escala*3);
-	\coordinate(28) at (\escala*4, \escala*1, \escala*2);
-	\coordinate(29) at (-\escala*4, \escala*1, \escala*2);
-	\coordinate(30) at (\escala*4, \escala*1, -\escala*2);
+	\coordinate(21) at (2, -4, -1);
+	\coordinate(22) at (-2, 4, -1);
+	\coordinate(23) at (-2, -4, -1);
+	\coordinate(24) at (5, 0, 3);
+	\coordinate(25) at (-5, 0, 3);
+	\coordinate(26) at (5, 0, -3);
+	\coordinate(27) at (-5, 0, -3);
+	\coordinate(28) at (4, 1, 2);
+	\coordinate(29) at (-4, 1, 2);
+	\coordinate(30) at (4, 1, -2);
 	%
-	\coordinate(31) at (-\escala*4, \escala*1, -\escala*2);
-	\coordinate(32) at (\escala*4, -\escala*1, \escala*2);
-	\coordinate(33) at (-\escala*4, -\escala*1, \escala*2);
-	\coordinate(34) at (\escala*4, -\escala*1, -\escala*2);
-	\coordinate(35) at (-\escala*4, -\escala*1, -\escala*2);
+	\coordinate(31) at (-4, 1, -2);
+	\coordinate(32) at (4, -1, 2);
+	\coordinate(33) at (-4, -1, 2);
+	\coordinate(34) at (4, -1, -2);
+	\coordinate(35) at (-4, -1, -2);
 	% Faces of the rings
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (11) -- (9) -- (1) -- cycle;
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (1) -- (5) -- (7) -- cycle;

@@ -24,30 +24,29 @@
 \begin{document}
 \tdplotsetmaincoords{105}{180}
 %
-\begin{tikzpicture}[tdplot_main_coords]
+\begin{tikzpicture}[tdplot_main_coords,scale=3.0]
 	%
-	\pgfmathsetmacro{\escala}{3.0}
 	\pgfmathsetmacro{\cero}{(sqrt(5.0) - 1.0) / 4.0}
 	\pgfmathsetmacro{\uno}{(1.0 + sqrt(5.0)) / 4.0}
 	\pgfmathsetmacro{\dos}{(3.0 + sqrt(5.0)) / 4.0}
 	\pgfmathsetmacro{\tres}{(1.0 + sqrt(5.0)) / 2.0}
 	% Coordenadas de los vértices
 	
-	\coordinate(0) at (\escala * \tres, \escala * 0.0, \escala * 0.0);
-	\coordinate(1) at (-\escala * \tres, \escala * 0.0, \escala * 0.0);
-	\coordinate(2) at (\escala * \dos, -\escala * \uno, \escala * 0.5);
-	\coordinate(3) at (\escala * \dos, \escala * \uno, -\escala * 0.5);
-	\coordinate(4) at (-\escala * \dos, -\escala * \uno, \escala * 0.5);
-	\coordinate(5) at (-\escala * \dos, \escala * \uno, -\escala * 0.5);
-	\coordinate(6) at (\escala * 0.5, -\escala * \dos, \escala * \uno);
-	\coordinate(7) at (\escala * 0.5, \escala * \dos, -\escala * \uno);
-	\coordinate(8) at (-\escala * 0.5, -\escala * \dos, \escala * \uno);
-	\coordinate(9) at (-\escala * 0.5, \escala * \dos, -\escala * \uno);
-	\coordinate(10) at (\escala * \uno, \escala * 0.5, \escala * \cero);
-	\coordinate(11) at (-\escala * \uno, \escala * 0.5, \escala * \cero);
-	\coordinate(12) at (\escala * 0.5, -\escala * \cero, \escala * \uno);
-	\coordinate(13) at (-\escala * 0.5, -\escala * \cero, \escala * \uno);
-	\coordinate(14) at (\escala * 0.0, \escala * 1.0, \escala * 0.0);
+	\coordinate(0) at (\tres, 0.0, 0.0);
+	\coordinate(1) at (-\tres, 0.0, 0.0);
+	\coordinate(2) at (\dos, -\uno, 0.5);
+	\coordinate(3) at (\dos, \uno, -0.5);
+	\coordinate(4) at (-\dos, -\uno, 0.5);
+	\coordinate(5) at (-\dos, \uno, -0.5);
+	\coordinate(6) at (0.5, -\dos, \uno);
+	\coordinate(7) at (0.5, \dos, -\uno);
+	\coordinate(8) at (-0.5, -\dos, \uno);
+	\coordinate(9) at (-0.5, \dos, -\uno);
+	\coordinate(10) at (\uno, 0.5, \cero);
+	\coordinate(11) at (-\uno, 0.5, \cero);
+	\coordinate(12) at (0.5, -\cero, \uno);
+	\coordinate(13) at (-0.5, -\cero, \uno);
+	\coordinate(14) at (0.0, 1.0, 0.0);
 	% Faces of the polyhedron
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (2) -- (6) -- (8) -- (4) -- (1) -- (5) -- (9) -- (7) -- (3) -- cycle;
 	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (8) -- (6) -- (12) -- cycle;

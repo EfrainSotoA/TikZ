@@ -24,25 +24,23 @@
 \begin{document}
 \tdplotsetmaincoords{70}{120}
 %
-\begin{tikzpicture}[tdplot_main_coords]
+\begin{tikzpicture}[tdplot_main_coords,scale=2.5]
 	%	
-	\pgfmathsetmacro{\escala}{2.5}
-	\pgfmathsetmacro{\a}{\escala*sqrt(2.0)}
-	\pgfmathsetmacro{\b}{\escala*1.0/sqrt(2.0)}
-	
+	\pgfmathsetmacro{\a}{sqrt(2.0)}
+	\pgfmathsetmacro{\b}{1.0/sqrt(2.0)}
 	% Coordenadas de los vértices
-	\coordinate(UNO) at (-1*\escala,0,0);
-	\coordinate(DOS) at (-0.5*\escala,-0.5*\escala,-\b);
-	\coordinate(TRES) at (-0.5*\escala,-0.5*\escala,\b);
-	\coordinate(CUATRO) at (-0.5*\escala,0.5*\escala,-\b);
-	\coordinate(CINCO) at (-0.5*\escala,0.5*\escala,\b);
-	\coordinate(SEIS) at (0,-1*\escala,0);
-	\coordinate(SIETE) at (0,1*\escala,0);
-	\coordinate(OCHO) at (0.5*\escala,-0.5*\escala,-\b);
-	\coordinate(NUEVE) at (0.5*\escala,-0.5*\escala,\b);
-	\coordinate(DIEZ) at (0.5*\escala,0.5*\escala,-\b);
-	\coordinate(ONCE) at (0.5*\escala,0.5*\escala,\b);
-	\coordinate(DOCE) at (1*\escala,0,0);
+	\coordinate(UNO) at (-1,0,0);
+	\coordinate(DOS) at (-0.5,-0.5,-\b);
+	\coordinate(TRES) at (-0.5,-0.5,\b);
+	\coordinate(CUATRO) at (-0.5,0.5,-\b);
+	\coordinate(CINCO) at (-0.5,0.5,\b);
+	\coordinate(SEIS) at (0,-1,0);
+	\coordinate(SIETE) at (0,1,0);
+	\coordinate(OCHO) at (0.5,-0.5,-\b);
+	\coordinate(NUEVE) at (0.5,-0.5,\b);
+	\coordinate(DIEZ) at (0.5,0.5,-\b);
+	\coordinate(ONCE) at (0.5,0.5,\b);
+	\coordinate(DOCE) at (1,0,0);
 	% Faces of the polyhedron
 	\draw[red,thick,fill=cyan!35,opacity=0.75] (DOCE) -- (ONCE) -- (NUEVE) -- (DOCE);
 	\draw[red,thick,fill=cyan!35,opacity=0.75] (CINCO) -- (ONCE) -- (SIETE) -- (CINCO);
