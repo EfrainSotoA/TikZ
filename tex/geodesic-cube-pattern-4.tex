@@ -1,0 +1,148 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% Nombre de archivo: geodesic-cube-pattern-4.tex
+% Description: 
+% A Geodesic Cube Pattern 4 is shown.
+% 
+% Date of creation: January, 13th, 2024.
+% Date of last modification: January, 13th, 2024.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Terms of use:
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{80}{120}
+%
+\begin{tikzpicture}[tdplot_main_coords,scale=5]
+	% Constants
+	\pgfmathsetmacro{\cero}{0.38651311}
+	\pgfmathsetmacro{\uno}{0.5827323}
+	\pgfmathsetmacro{\dos}{0.732351}
+	\pgfmathsetmacro{\tres}{0.879711981}
+	\pgfmathsetmacro{\cuatro}{1.0444}
+	% Coordinates of the vertices
+	\coordinate(0) at  (0.0, 0.0, \cuatro);
+	\coordinate(1) at  (0.0, 0.0, -\cuatro);
+	\coordinate(2) at  (\cuatro, 0.0, 0.0);
+	\coordinate(3) at  (-\cuatro, 0.0, 0.0);
+	\coordinate(4) at  (0.0, \cuatro, 0.0);
+	\coordinate(5) at  (0.0, -\cuatro, 0.0);
+	\coordinate(6) at  (\cero, \cero, \tres);
+	\coordinate(7) at  (\cero, \cero, -\tres);
+	\coordinate(8) at  (\cero, -\cero, \tres);
+	\coordinate(9) at  (\cero, -\cero, -\tres);
+	\coordinate(10) at  (-\cero, \cero, \tres);
+	\coordinate(11) at  (-\cero, \cero, -\tres);
+	\coordinate(12) at  (-\cero, -\cero, \tres);
+	\coordinate(13) at  (-\cero, -\cero, -\tres);
+	\coordinate(14) at  (\tres, \cero, \cero);
+	\coordinate(15) at  (\tres, \cero, -\cero);
+	\coordinate(16) at  (\tres, -\cero, \cero);
+	\coordinate(17) at  (\tres, -\cero, -\cero);
+	\coordinate(18) at  (-\tres, \cero, \cero);
+	\coordinate(19) at  (-\tres, \cero, -\cero);
+	\coordinate(20) at  (-\tres, -\cero, \cero);
+	\coordinate(21) at  (-\tres, -\cero, -\cero);
+	\coordinate(22) at  (\cero, \tres, \cero);
+	\coordinate(23) at  (\cero, \tres, -\cero);
+	\coordinate(24) at  (\cero, -\tres, \cero);
+	\coordinate(25) at  (\cero, -\tres, -\cero);
+	\coordinate(26) at  (-\cero, \tres, \cero);
+	\coordinate(27) at  (-\cero, \tres, -\cero);
+	\coordinate(28) at  (-\cero, -\tres, \cero);
+	\coordinate(29) at  (-\cero, -\tres, -\cero);
+	\coordinate(30) at  (\dos, 0.0, \dos);
+	\coordinate(31) at  (\dos, 0.0, -\dos);
+	\coordinate(32) at  (-\dos, 0.0, \dos);
+	\coordinate(33) at  (-\dos, 0.0, -\dos);
+	\coordinate(34) at  (\dos, \dos, 0.0);
+	\coordinate(35) at  (\dos, -\dos, 0.0);
+	\coordinate(36) at  (-\dos, \dos, 0.0);
+	\coordinate(37) at  (-\dos, -\dos, 0.0);
+	\coordinate(38) at  (0.0, \dos, \dos);
+	\coordinate(39) at  (0.0, \dos, -\dos);
+	\coordinate(40) at  (0.0, -\dos, \dos);
+	\coordinate(41) at  (0.0, -\dos, -\dos);
+	\coordinate(42) at  (\uno, \uno, \uno);
+	\coordinate(43) at  (\uno, \uno, -\uno);
+	\coordinate(44) at  (\uno, -\uno, \uno);
+	\coordinate(45) at  (\uno, -\uno, -\uno);
+	\coordinate(46) at  (-\uno, \uno, \uno);
+	\coordinate(47) at  (-\uno, \uno, -\uno);
+	\coordinate(48) at  (-\uno, -\uno, \uno);
+	\coordinate(49) at  (-\uno, -\uno, -\uno);
+	%
+	% Faces of the polyhedron
+	%
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (6) -- (38) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (8) -- (30) -- (6) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (7) -- (31) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (14) -- (30) -- (16) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (16) -- (35) -- (17) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (17) -- (31) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (15) -- (34) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (22) -- (34) -- (23) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (27) -- (36) -- (26) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (26) -- (38) -- (22) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (42) -- (6) -- (30) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (42) -- (14) -- (34) -- (22) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (42) -- (22) -- (38) -- (6) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (43) -- (23) -- (34) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (43) -- (15) -- (31) -- (7) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (44) -- (8) -- (40) -- (24) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (44) -- (24) -- (35) -- (16) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (44) -- (16) -- (30) -- (8) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (45) -- (9) -- (31) -- (17) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (45) -- (17) -- (35) -- (25) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (45) -- (25) -- (41) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (46) -- (10) -- (38) -- (26) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (43) -- (7) -- (39) -- (23) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (23) -- (39) -- (27) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (10) -- (32) -- (12) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (12) -- (40) -- (8) -- cycle;
+	%
+	%
+	%
+	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (11) -- (39) -- (7) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (9) -- (41) -- (13) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (13) -- (33) -- (11) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (47) -- (11) -- (33) -- (19) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (47) -- (19) -- (36) -- (27) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (47) -- (27) -- (39) -- (11) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (49) -- (21) -- (33) -- (13) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (49) -- (13) -- (41) -- (29) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (29) -- (41) -- (25) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (25) -- (35) -- (24) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (49) -- (29) -- (37) -- (21) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (46) -- (18) -- (32) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (46) -- (26) -- (36) -- (18) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (18) -- (36) -- (19) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (19) -- (33) -- (21) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (24) -- (40) -- (28) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (28) -- (37) -- (29) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (21) -- (37) -- (20) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (20) -- (32) -- (18) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (48) -- (12) -- (32) -- (20) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (48) -- (20) -- (37) -- (28) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (48) -- (28) -- (40) -- (12) -- cycle;
+	%
+	% Los vértices del poliedro
+	%
+%	\foreach \punto in {0,1,...,49}{
+%		\fill[blue] (\punto) circle (0.25pt) node [above] {\tiny$\punto$};
+%	}
+	%
+	\end{tikzpicture}
+	%
+\end{document}
+
+
+

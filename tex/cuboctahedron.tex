@@ -1,0 +1,64 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: cuboctahedron.tex
+% Description: 
+% A geometric representation of a cuboctahedron is shown.
+% 
+% Date of creation: May, 25th, 2020.
+% Date of last modification: August, 19th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{70}{120}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	%	
+	\pgfmathsetmacro{\escala}{2.5}
+	\pgfmathsetmacro{\a}{\escala*sqrt(2.0)}
+	\pgfmathsetmacro{\b}{\escala*1.0/sqrt(2.0)}
+	
+	% Coordenadas de los vértices
+	\coordinate(UNO) at (-1*\escala,0,0);
+	\coordinate(DOS) at (-0.5*\escala,-0.5*\escala,-\b);
+	\coordinate(TRES) at (-0.5*\escala,-0.5*\escala,\b);
+	\coordinate(CUATRO) at (-0.5*\escala,0.5*\escala,-\b);
+	\coordinate(CINCO) at (-0.5*\escala,0.5*\escala,\b);
+	\coordinate(SEIS) at (0,-1*\escala,0);
+	\coordinate(SIETE) at (0,1*\escala,0);
+	\coordinate(OCHO) at (0.5*\escala,-0.5*\escala,-\b);
+	\coordinate(NUEVE) at (0.5*\escala,-0.5*\escala,\b);
+	\coordinate(DIEZ) at (0.5*\escala,0.5*\escala,-\b);
+	\coordinate(ONCE) at (0.5*\escala,0.5*\escala,\b);
+	\coordinate(DOCE) at (1*\escala,0,0);
+	% Faces of the polyhedron
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (DOCE) -- (ONCE) -- (NUEVE) -- (DOCE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (CINCO) -- (ONCE) -- (SIETE) -- (CINCO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (OCHO) -- (DIEZ) -- (DOCE) -- (OCHO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (SIETE) -- (DIEZ) -- (CUATRO) -- (SIETE);
+	% 
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (ONCE) -- (DOCE) -- (DIEZ) -- (SIETE) -- (ONCE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (NUEVE) -- (SEIS) -- (OCHO) -- (DOCE) -- (NUEVE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (TRES) -- (NUEVE) -- (ONCE) -- (CINCO) -- (TRES);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (CINCO) -- (SIETE) -- (CUATRO) -- (UNO) -- (CINCO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (TRES) -- (UNO) -- (DOS) -- (SEIS) -- (TRES);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (CUATRO) -- (DIEZ) -- (OCHO) -- (DOS) -- (CUATRO);
+	% 
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (TRES) -- (CINCO) -- (UNO) -- (TRES);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (SEIS) -- (NUEVE) -- (TRES) -- (SEIS);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (UNO) -- (CUATRO) -- (DOS) -- (UNO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75] (DOS) -- (OCHO) -- (SEIS) -- (DOS);
+	\end{tikzpicture}
+\end{document}

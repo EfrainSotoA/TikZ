@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: square-bipyramid.tex
+% Description: 
+% A geometric representation of a square bipyramid is shown.
+% 
+% Date of creation: May, 21st, 2021.
+% Date of last modification: August, 19th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+%
+\tdplotsetmaincoords{70}{140}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	\pgfmathsetmacro{\r}{1.5}
+	\pgfmathsetmacro{\L}{sqrt(2.0)*\r}
+	\pgfmathsetmacro{\H}{0.5*sqrt(2.0)*\L}
+	\pgfmathsetmacro{\n}{4.0}
+	\pgfmathsetmacro{\anguloi}{60}
+	\pgfmathsetmacro{\angulo}{360.0/\n}
+	\pgfmathsetmacro{\criterio}{int(0.5*\n)}
+	\pgfmathsetmacro{\pxn}{\r*cos(0.5*\anguloi)}
+	\pgfmathsetmacro{\pyn}{\r*sin(0.5*\anguloi)}
+	% Compute the coordinates of the vertices
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\pxi}{\r*cos((\angulo)*\vertice+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\r*sin((\angulo)*\vertice+\anguloi)}
+		\coordinate (P\vertice) at (\pxi,\pyi,0);
+	}
+	% Draw the polyhedron
+	% The tringular faces
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\vf}{\vertice+1}
+		\ifthenelse{\vertice<\n}{
+			\fill[cyan!50,opacity=0.5] (P\vertice) -- (P\vf) -- (0,0,\H) -- (P\vertice);
+			\fill[cyan!50,opacity=0.5] (P\vertice) -- (P\vf) -- (0,0,-\H) -- (P\vertice);
+			%
+			\draw[red,thick] (P\vertice) -- (P\vf);
+			\draw[red,thick] (P\vertice) -- (0,0,\H);
+			\draw[red,thick] (P\vertice) -- (0,0,-\H);
+		}{ % The last face
+			\fill[cyan!50,opacity=0.5] (P\vertice) -- (P1) -- (0,0,\H) -- (P\vertice);
+			\fill[cyan!50,opacity=0.5] (P\vertice) -- (P1) -- (0,0,-\H) -- (P\vertice);
+			\draw[red,thick] (P\vertice) -- (P1);
+			\draw[red,thick] (P\vertice) -- (0,0,\H);
+			\draw[red,thick] (P\vertice) -- (0,0,-\H);
+		}
+	}
+\end{tikzpicture}
+%
+\end{document}

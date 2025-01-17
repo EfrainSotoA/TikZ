@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: frustum.tex
+% Description: 
+% A geometric representation of a frustum is shown.
+% 
+% Date of creation: December, 12th, 2020.
+% Date of last modification: August, 19th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+%
+\tdplotsetmaincoords{70}{120}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	\pgfmathsetmacro{\r}{1.75}
+	\pgfmathsetmacro{\h}{2.5}
+	\pgfmathsetmacro{\R}{2.5}
+	\pgfmathsetmacro{\n}{5}
+	\pgfmathsetmacro{\previo}{\n-1}
+	\pgfmathsetmacro{\anguloi}{60}
+	\pgfmathsetmacro{\angulo}{360.0/\n}
+	\pgfmathsetmacro{\criterio}{int(0.5*\n)}
+	\pgfmathsetmacro{\pxn}{\r*cos(0.5*\anguloi)}
+	\pgfmathsetmacro{\pyn}{\r*sin(0.5*\anguloi)}		
+	% Calculate the coordinates of the vertices of the base
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\pxi}{\R*cos((\angulo)*\vertice+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\R*sin((\angulo)*\vertice+\anguloi)}
+		\coordinate (L\vertice) at (\pxi,\pyi,0);
+		\pgfmathsetmacro{\pxi}{\r*cos((\angulo)*\vertice+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\r*sin((\angulo)*\vertice+\anguloi)}
+		\coordinate (H\vertice) at (\pxi,\pyi,\h);
+	}
+	% Draw the faces of the polyhedron
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\vf}{\vertice+1}
+		\ifthenelse{\vertice<\n}{
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (0,0,0) -- (L\vf) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L\vf) -- (H\vf) -- (H\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L\vf) -- (H\vf) -- (H\vertice) -- (L\vertice);
+			\draw[red,thick] (L\vertice) -- (L\vf);
+			\draw[red,thick] (L\vertice) -- (H\vertice);
+			\draw[red,thick] (H\vertice) -- (H\vf);
+		}{ % the last face
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L1) -- (0,0,0) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L1) -- (H1) -- (H\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (H\vertice) -- (H1) -- (0,0,\h) -- (H\vertice);
+			\fill[cyan!50,opacity=0.5] (H1) -- (H2) -- (0,0,\h) -- (H1);
+			\draw[red,thick] (L\vertice) -- (L1);
+			\draw[red,thick] (H\vertice) -- (H1);
+			\draw[red,thick] (L\vertice) -- (H\vertice);			
+		}
+	}
+	% Fill top face
+	\foreach \vertice in {1,2,...,\previo}{
+		\pgfmathsetmacro{\vf}{\vertice+1}
+		\fill[cyan!50,opacity=0.5] (H\vertice) -- (0,0,\h) -- (H\vf) -- (H\vertice);
+		\ifthenelse{\vertice<\n}{
+			\fill[cyan!50,opacity=0.5] (H\vertice) -- (0,0,\h) -- (H\vf) -- (H\vertice);
+		}{ % the last face
+			\draw[red,thick] (H\n) -- (H1);
+		}
+	}
+	\fill[cyan!50,opacity=0.5] (H\n) -- (0,0,\h) -- (H1) -- (H\n);
+\end{tikzpicture}
+%	
+\end{document}

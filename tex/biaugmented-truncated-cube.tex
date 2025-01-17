@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: biaugmented-truncated-cube.tex
+% Description: 
+% A geometric representation of an biaugmented truncated cube is shown.
+% 
+% Date of creation: June, 19th, 2021.
+% Date of last modification: June, 19th, 2021.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{80}{115}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	%
+	\pgfmathsetmacro{\escala}{1.25}
+	\pgfmathsetmacro{\r}{\escala}
+	% Coordinates of the vertices
+	\coordinate(1) at (-\escala*0.5, \escala*1.20711, \escala*1.20711);
+	\coordinate(2) at (-\escala*0.5, \escala*1.20711, -\escala*1.20711);
+	\coordinate(3) at (-\escala*0.5, -\escala*1.20711, \escala*1.20711);
+	\coordinate(4) at (-\escala*0.5, -\escala*1.20711, -\escala*1.20711);
+	\coordinate(5) at (\escala*0., -\escala*0.707107, \escala*1.91421);
+	\coordinate(6) at (\escala*0., -\escala*0.707107, -\escala*1.91421);
+	\coordinate(7) at (\escala*0., \escala*0.707107, \escala*1.91421);
+	\coordinate(8) at (\escala*0., \escala*0.707107, -\escala*1.91421);
+	\coordinate(9) at (\escala*0.5, \escala*1.20711, \escala*1.20711);
+	\coordinate(10) at (\escala*0.5, \escala*1.20711, -\escala*1.20711);
+	%
+	\coordinate(11) at (\escala*0.5, -\escala*1.20711, \escala*1.20711);
+	\coordinate(12) at (\escala*0.5, -\escala*1.20711, -\escala*1.20711);
+	\coordinate(13) at (-\escala*0.707107, \escala*0., \escala*1.91421);
+	\coordinate(14) at (-\escala*0.707107, \escala*0., -\escala*1.91421);
+	\coordinate(15) at (\escala*0.707107, \escala*0., \escala*1.91421);
+	\coordinate(16) at (\escala*0.707107, \escala*0., -\escala*1.91421);
+	\coordinate(17) at (\escala*1.20711, -\escala*0.5, \escala*1.20711);
+	\coordinate(18) at (\escala*1.20711, -\escala*0.5, -\escala*1.20711);
+	\coordinate(19) at (\escala*1.20711, \escala*0.5, \escala*1.20711);
+	\coordinate(20) at (\escala*1.20711, \escala*0.5, -\escala*1.20711);
+	%
+	\coordinate(21) at (\escala*1.20711, \escala*1.20711, -\escala*0.5);
+	\coordinate(22) at (\escala*1.20711, \escala*1.20711, \escala*0.5);
+	\coordinate(23) at (\escala*1.20711, -\escala*1.20711, -\escala*0.5);
+	\coordinate(24) at (\escala*1.20711, -\escala*1.20711, \escala*0.5);
+	\coordinate(25) at (-\escala*1.20711, -\escala*0.5, \escala*1.20711);
+	\coordinate(26) at (-\escala*1.20711, -\escala*0.5, -\escala*1.20711);
+	\coordinate(27) at (-\escala*1.20711, \escala*0.5, \escala*1.20711);
+	\coordinate(28) at (-\escala*1.20711, \escala*0.5, -\escala*1.20711);
+	\coordinate(29) at (-\escala*1.20711, \escala*1.20711, -\escala*0.5);
+	\coordinate(30) at (-\escala*1.20711, \escala*1.20711, \escala*0.5);
+	%
+	\coordinate(31) at (-\escala*1.20711, -\escala*1.20711, -\escala*0.5);
+	\coordinate(32) at (-\escala*1.20711, -\escala*1.20711, \escala*0.5);
+	% Faces of the polyhedron
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (32) -- (31) -- (4) -- (12) -- (23) -- (24) -- (11) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (27) -- (30) -- (29) -- (28) -- (26) -- (31) -- (32) -- (25) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (25) -- (32) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (30) -- (27) -- (1) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (31) -- (26) -- (4) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (28) -- (29) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (16) -- (6) -- (14) -- (8) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (28) -- (2) -- (8) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (26) -- (14) -- (6) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (14) -- (26) -- (28) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (6) -- (12) -- (4) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (7) -- (1) -- (27) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (13) -- (25) -- (3) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (27) -- (25) -- (13) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (11) -- (5) -- cycle;
+	%
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (8) -- (2) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (20) -- (16) -- (8) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (21) -- (20) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (16) -- (20) -- (18) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (18) -- (12) -- (6) -- (16) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (18) -- (23) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (1) -- (7) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (19) -- (22) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (22) -- (21) -- (10) -- (2) -- (29) -- (30) -- (1) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (24) -- (17) -- (11) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (17) -- (24) -- (23) -- (18) -- (20) -- (21) -- (22) -- (19) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (17) -- (19) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (7) -- (15) -- (19) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (15) -- (5) -- (11) -- (17) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (7) -- (13) -- (5) -- (15) -- cycle;
+	%
+	\end{tikzpicture}
+	%
+\end{document}
+
+
+

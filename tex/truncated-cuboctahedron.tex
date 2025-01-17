@@ -1,0 +1,135 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: truncated-cuboctahedron.tex
+% Description: 
+% A geometric representation of a truncated cuboctahedron is shown.
+% 
+% Date of creation: May, 16th, 2021.
+% Date of last modification: August, 19th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{70}{140}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	%
+	\pgfmathsetmacro{\escala}{2.0}
+	% Coordinates of the vertices
+	\coordinate(UNO) at (-\escala*0.5, \escala*1.20711, -\escala*1.91421);
+	\coordinate(DOS) at (-\escala*0.5, \escala*1.20711, \escala*1.91421);
+	\coordinate(TRES) at (-\escala*0.5, -\escala*1.20711, -\escala*1.91421);
+	\coordinate(CUATRO) at (-\escala*0.5, -\escala*1.20711, \escala*1.91421);
+	\coordinate(CINCO) at (-\escala*0.5, -\escala*1.91421, \escala*1.20711);
+	\coordinate(SEIS) at (-\escala*0.5, -\escala*1.91421, -\escala*1.20711);
+	\coordinate(SIETE) at (-\escala*0.5, \escala*1.91421, \escala*1.20711);
+	\coordinate(OCHO) at (-\escala*0.5, \escala*1.91421, -\escala*1.20711);
+	\coordinate(NUEVE) at (\escala*0.5, \escala*1.20711, -\escala*1.91421);
+	\coordinate(DIEZ) at (\escala*0.5, \escala*1.20711, \escala*1.91421);
+	%
+	\coordinate(ONCE) at (\escala*0.5, -\escala*1.20711, -\escala*1.91421);
+	\coordinate(DOCE) at (\escala*0.5, -\escala*1.20711, \escala*1.91421);
+	\coordinate(TRECE) at (\escala*0.5, -\escala*1.91421, \escala*1.20711);
+	\coordinate(CATORCE) at (\escala*0.5, -\escala*1.91421, -\escala*1.20711);
+	\coordinate(QUINCE) at (\escala*0.5, \escala*1.91421, \escala*1.20711);
+	\coordinate(DIECISEIS) at (\escala*0.5, \escala*1.91421, -\escala*1.20711);
+	\coordinate(DIECISIETE) at (\escala*1.20711, -\escala*0.5, -\escala*1.91421);
+	\coordinate(DIECIOCHO) at (\escala*1.20711, -\escala*0.5, \escala*1.91421);
+	\coordinate(DIECINUEVE) at (\escala*1.20711, \escala*0.5, -\escala*1.91421);
+	\coordinate(VEINTE) at (\escala*1.20711, \escala*0.5, \escala*1.91421);
+	%
+	\coordinate(VEINTIUNO) at (\escala*1.20711, -\escala*1.91421, -\escala*0.5);
+	\coordinate(VEINTIDOS) at (\escala*1.20711, -\escala*1.91421, \escala*0.5);
+	\coordinate(VEINTITRES) at (\escala*1.20711, \escala*1.91421, -\escala*0.5);
+	\coordinate(VEINTICUATRO) at (\escala*1.20711, \escala*1.91421, \escala*0.5);
+	\coordinate(VEINTICINCO) at (-\escala*1.20711, -\escala*0.5, -\escala*1.91421);
+	\coordinate(VEINTISEIS) at (-\escala*1.20711, -\escala*0.5, \escala*1.91421);
+	\coordinate(VEINTISIETE) at (-\escala*1.20711, \escala*0.5, -\escala*1.91421);
+	\coordinate(VEINTIOCHO) at (-\escala*1.20711, \escala*0.5, \escala*1.91421);
+	\coordinate(VEINTINUEVE) at (-\escala*1.20711, -\escala*1.91421, -\escala*0.5);
+	\coordinate(TREINTA) at (-\escala*1.20711, -\escala*1.91421, \escala*0.5);
+	%
+	\coordinate(TREINTAYUNO) at (-\escala*1.20711, \escala*1.91421, -\escala*0.5);
+	\coordinate(TREINTAYDOS) at (-\escala*1.20711, \escala*1.91421, \escala*0.5);
+	\coordinate(TREINTAYTRES) at (-\escala*1.91421, -\escala*0.5, \escala*1.20711);
+	\coordinate(TREINTAYCUATRO) at (-\escala*1.91421, -\escala*0.5, -\escala*1.20711);
+	\coordinate(TREINTAYCINCO) at (-\escala*1.91421, \escala*0.5, \escala*1.20711);
+	\coordinate(TREINTAYSEIS) at (-\escala*1.91421, \escala*0.5, -\escala*1.20711);
+	\coordinate(TREINTAYSIETE) at (-\escala*1.91421, \escala*1.20711, -\escala*0.5);
+	\coordinate(TREINTAYOCHO) at (-\escala*1.91421, \escala*1.20711, \escala*0.5);
+	\coordinate(TREINTAYNUEVE) at (-\escala*1.91421, -\escala*1.20711, -\escala*0.5);
+	\coordinate(CUARENTA) at (-\escala*1.91421, -\escala*1.20711, \escala*0.5);
+	%
+	\coordinate(CUARENTAYUNO) at (\escala*1.91421, -\escala*0.5, \escala*1.20711);
+	\coordinate(CUARENTAYDOS) at (\escala*1.91421, -\escala*0.5, -\escala*1.20711);
+	\coordinate(CUARENTAYTRES) at (\escala*1.91421, \escala*0.5, \escala*1.20711);
+	\coordinate(CUARENTAYCUATRO) at (\escala*1.91421, \escala*0.5, -\escala*1.20711);
+	\coordinate(CUARENTAYCINCO) at (\escala*1.91421, \escala*1.20711, -\escala*0.5);
+	\coordinate(CUARENTAYSEIS) at (\escala*1.91421, \escala*1.20711, \escala*0.5);
+	\coordinate(CUARENTAYSIETE) at (\escala*1.91421, -\escala*1.20711, -\escala*0.5);
+	\coordinate(CUARENTAYOCHO) at (\escala*1.91421, -\escala*1.20711, \escala*0.5);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CINCO) -- (TREINTA) -- (VEINTINUEVE) -- (SEIS) 
+			-- (CATORCE) -- (VEINTIUNO) -- (VEINTIDOS) -- (TRECE) -- (CINCO);	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (NUEVE) -- (DIECINUEVE) -- (DIECISIETE) -- (ONCE) 
+			-- (TRES) -- (VEINTICINCO) -- (VEINTISIETE) -- (UNO) -- (NUEVE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYCINCO) -- (TREINTAYOCHO) -- (TREINTAYSIETE) 
+			-- (TREINTAYSEIS) -- (TREINTAYCUATRO) -- (TREINTAYNUEVE) -- (CUARENTA) 
+			-- (TREINTAYTRES) -- (TREINTAYCINCO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTA) -- (TREINTA) -- (CINCO) -- (CUATRO) 
+			-- (VEINTISEIS) -- (TREINTAYTRES) -- (CUARENTA);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYSIETE) -- (TREINTAYUNO) -- (OCHO) -- (UNO) 
+			-- (VEINTISIETE) -- (TREINTAYSEIS) -- (TREINTAYSIETE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYCUATRO) -- (VEINTICINCO) -- (TRES) -- (SEIS) 
+			-- (VEINTINUEVE) -- (TREINTAYNUEVE) -- (TREINTAYCUATRO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYSIETE) -- (VEINTIUNO) -- (CATORCE) -- (ONCE) 
+			-- (DIECISIETE) -- (CUARENTAYDOS) -- (CUARENTAYSIETE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYNUEVE) -- (VEINTINUEVE) -- (TREINTA) 
+			-- (CUARENTA) -- (TREINTAYNUEVE);	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (VEINTE) -- (DIECIOCHO) -- (CUARENTAYUNO) 
+			-- (CUARENTAYTRES) -- (VEINTE);	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (DOCE) -- (CUATRO) -- (CINCO) -- (TRECE) -- (DOCE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CATORCE) -- (SEIS) -- (TRES) -- (ONCE) -- (CATORCE);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYCUATRO) -- (TREINTAYSEIS) -- (VEINTISIETE) 
+			-- (VEINTICINCO) -- (TREINTAYCUATRO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYOCHO) -- (VEINTIDOS) -- (VEINTIUNO) 
+			-- (CUARENTAYSIETE) -- (CUARENTAYOCHO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYOCHO) -- (TREINTAYDOS) -- (TREINTAYUNO) 
+			-- (TREINTAYSIETE) -- (TREINTAYOCHO);	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYCUATRO) -- (CUARENTAYDOS) -- (DIECISIETE) 
+			-- (DIECINUEVE) -- (CUARENTAYCUATRO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (OCHO) -- (DIECISEIS) -- (NUEVE) -- (UNO) -- (OCHO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (VEINTISEIS) -- (VEINTIOCHO) -- (TREINTAYCINCO) 
+			-- (TREINTAYTRES) -- (VEINTISEIS);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (DOS) -- (DIEZ) -- (QUINCE) -- (SIETE) -- (DOS);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYCINCO) -- (VEINTITRES) -- (VEINTICUATRO) 
+			-- (CUARENTAYSEIS) -- (CUARENTAYCINCO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (TREINTAYCINCO) -- (VEINTIOCHO) -- (DOS) -- (SIETE) 
+			-- (TREINTAYDOS) -- (TREINTAYOCHO) -- (TREINTAYCINCO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYSEIS) -- (VEINTICUATRO) -- (QUINCE) 
+			-- (DIEZ) -- (VEINTE) -- (CUARENTAYTRES) -- (CUARENTAYSEIS);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYCUATRO) -- (DIECINUEVE) -- (NUEVE) -- (DIECISEIS) 
+			-- (VEINTITRES) -- (CUARENTAYCINCO) -- (CUARENTAYCUATRO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYUNO) -- (DIECIOCHO) -- (DOCE) -- (TRECE) 
+			-- (VEINTIDOS) -- (CUARENTAYOCHO) -- (CUARENTAYUNO);	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (DOS) -- (VEINTIOCHO) -- (VEINTISEIS) -- (CUATRO) 
+			-- (DOCE) -- (DIECIOCHO) -- (VEINTE) -- (DIEZ) -- (DOS);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (CUARENTAYUNO) -- (CUARENTAYOCHO) -- (CUARENTAYSIETE) 
+			-- (CUARENTAYDOS) -- (CUARENTAYCUATRO) -- (CUARENTAYCINCO) -- (CUARENTAYSEIS) 
+			-- (CUARENTAYTRES) -- (CUARENTAYUNO);
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (QUINCE) -- (VEINTICUATRO) -- (VEINTITRES) -- (DIECISEIS) 
+			-- (OCHO) -- (TREINTAYUNO) -- (TREINTAYDOS) -- (SIETE) -- (QUINCE);
+	\end{tikzpicture}
+	%
+\end{document}

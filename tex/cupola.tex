@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: cupola.tex
+% Description: 
+% A geometric representation of a cupola is shown.
+% 
+% Date of creation: July, 22nd, 2023.
+% Date of last modification: August, 19th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{105}{180}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	%
+	\pgfmathsetmacro{\escala}{3.0}
+	\pgfmathsetmacro{\cero}{(sqrt(5.0) - 1.0) / 4.0}
+	\pgfmathsetmacro{\uno}{(1.0 + sqrt(5.0)) / 4.0}
+	\pgfmathsetmacro{\dos}{(3.0 + sqrt(5.0)) / 4.0}
+	\pgfmathsetmacro{\tres}{(1.0 + sqrt(5.0)) / 2.0}
+	% Coordenadas de los vértices
+	
+	\coordinate(0) at (\escala * \tres, \escala * 0.0, \escala * 0.0);
+	\coordinate(1) at (-\escala * \tres, \escala * 0.0, \escala * 0.0);
+	\coordinate(2) at (\escala * \dos, -\escala * \uno, \escala * 0.5);
+	\coordinate(3) at (\escala * \dos, \escala * \uno, -\escala * 0.5);
+	\coordinate(4) at (-\escala * \dos, -\escala * \uno, \escala * 0.5);
+	\coordinate(5) at (-\escala * \dos, \escala * \uno, -\escala * 0.5);
+	\coordinate(6) at (\escala * 0.5, -\escala * \dos, \escala * \uno);
+	\coordinate(7) at (\escala * 0.5, \escala * \dos, -\escala * \uno);
+	\coordinate(8) at (-\escala * 0.5, -\escala * \dos, \escala * \uno);
+	\coordinate(9) at (-\escala * 0.5, \escala * \dos, -\escala * \uno);
+	\coordinate(10) at (\escala * \uno, \escala * 0.5, \escala * \cero);
+	\coordinate(11) at (-\escala * \uno, \escala * 0.5, \escala * \cero);
+	\coordinate(12) at (\escala * 0.5, -\escala * \cero, \escala * \uno);
+	\coordinate(13) at (-\escala * 0.5, -\escala * \cero, \escala * \uno);
+	\coordinate(14) at (\escala * 0.0, \escala * 1.0, \escala * 0.0);
+	% Faces of the polyhedron
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (2) -- (6) -- (8) -- (4) -- (1) -- (5) -- (9) -- (7) -- (3) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (8) -- (6) -- (12) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (4) -- (8) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (6) -- (2) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (11) -- (1) -- (4) -- (13) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (14) -- (9) -- (5) -- (11) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (2) -- (0) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (3) -- (7) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (11) -- (5) -- (1) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (14) -- (7) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (0) -- (3) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (14) -- (11) -- (13) -- (12) -- cycle;
+	%
+	\end{tikzpicture}
+	%
+\end{document}
+
+
+

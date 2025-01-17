@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+%\usetikzlibrary{math}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: augmented-dodecahedron.tex
+% Description: 
+% A geometric representation of an augmented dodecahedron is shown.
+% 
+% Date of creation: June, 7th, 2021.
+% Date of last modification: June, 7th, 2021.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{60}{120}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	%
+	\pgfmathsetmacro{\escala}{1.75}
+	\pgfmathsetmacro{\r}{\escala}
+	% Coordinates of the vertices
+	\coordinate(1) at (\escala*0., \escala*0., \escala*1.40126);
+	\coordinate(2) at (\escala*0., \escala*0., -\escala*1.40126);
+	\coordinate(3) at (\escala*0.178411, -\escala*1.30902, \escala*0.467086);
+	\coordinate(4) at (\escala*0.178411, \escala*1.30902, \escala*0.467086);
+	\coordinate(5) at (\escala*0.467086, -\escala*0.809017, -\escala*1.04444);
+	\coordinate(6) at (\escala*0.467086, \escala*0.809017, -\escala*1.04444);
+	\coordinate(7) at (\escala*1.04444, -\escala*0.809017, \escala*0.467086);
+	\coordinate(8) at (\escala*1.04444, \escala*0.809017, \escala*0.467086);
+	\coordinate(9) at (-\escala*1.22285, -\escala*0.5, \escala*0.467086);
+	\coordinate(10) at (-\escala*1.22285, \escala*0.5, \escala*0.467086);
+	%
+	\coordinate(11) at (\escala*1.22285, -\escala*0.5, -\escala*0.467086);
+	\coordinate(12) at (\escala*1.22285, \escala*0.5, -\escala*0.467086);
+	\coordinate(13) at (-\escala*0.934172, \escala*0., -\escala*1.04444);
+	\coordinate(14) at (-\escala*0.467086, -\escala*0.809017, \escala*1.04444);
+	\coordinate(15) at (-\escala*0.467086, \escala*0.809017, \escala*1.04444);
+	\coordinate(16) at (\escala*0.934172, \escala*0., \escala*1.04444);
+	\coordinate(17) at (-\escala*1.04444, -\escala*0.809017, -\escala*0.467086);
+	\coordinate(18) at (-\escala*1.04444, \escala*0.809017, -\escala*0.467086);
+	\coordinate(19) at (-\escala*0.995125, \escala*0., \escala*1.30264);
+	\coordinate(20) at (-\escala*0.178411, -\escala*1.30902, -\escala*0.467086);
+	%
+	\coordinate(21) at (-\escala*0.178411, \escala*1.30902, -\escala*0.467086);
+	% Faces of the polyhedron
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (6) -- (12) -- (11) -- (5) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (11) -- (12) -- (8) -- (16) -- (7) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (7) -- (16) -- (1) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (16) -- (8) -- (4) -- (15) -- (1) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (19) -- (14) -- (1) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (19) -- (1) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (6) -- (21) -- (4) -- (8) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (19) -- (15) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (21) -- (18) -- (10) -- (15) -- cycle;
+	%
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (6) -- (2) -- (13) -- (18) -- (21) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (11) -- (7) -- (3) -- (20) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (19) -- (9) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (19) -- (10) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (17) -- (20) -- (3) -- (14) -- (9) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (18) -- (13) -- (17) -- (9) -- (10) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (5) -- (20) -- (17) -- (13) -- cycle;
+	%
+	\end{tikzpicture}
+	%
+\end{document}
+
+
+

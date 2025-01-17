@@ -1,0 +1,88 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{math}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: bifrustum.tex
+% Description: 
+% A geometric representation of a bilunabirotunda is shown.
+% 
+% Date of creation: July, 22nd, 2021.
+% Date of last modification: August, 19th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+%
+\tdplotsetmaincoords{70}{120}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	\pgfmathsetmacro{\r}{1.25}
+	\pgfmathsetmacro{\h}{sqrt(3.0)}
+	\pgfmathsetmacro{\R}{2.0}
+	\pgfmathsetmacro{\n}{5.0}
+	\pgfmathsetmacro{\anguloi}{60}
+	\pgfmathsetmacro{\angulo}{360.0/\n}
+	\pgfmathsetmacro{\criterio}{int(0.5*\n)}
+	\pgfmathsetmacro{\pxn}{\r*cos(0.5*\anguloi)}
+	\pgfmathsetmacro{\pyn}{\r*sin(0.5*\anguloi)}		
+	% Coordinates of the vertices of the base
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\pxi}{\R*cos((\angulo)*\vertice+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\R*sin((\angulo)*\vertice+\anguloi)}
+		\coordinate (L\vertice) at (\pxi,\pyi,0);
+		\pgfmathsetmacro{\pxi}{\r*cos((\angulo)*\vertice+\anguloi)}
+		\pgfmathsetmacro{\pyi}{\r*sin((\angulo)*\vertice+\anguloi)}
+		\coordinate (H\vertice) at (\pxi,\pyi,\h);
+		\coordinate (P\vertice) at (\pxi,\pyi,-\h);
+	}
+	% Drw the frustum
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\vf}{\vertice+1}
+		\ifthenelse{\vertice<\n}{
+			%\fill[cyan!50,opacity=0.5] (L\vertice) -- (0,0,0) -- (L\vf) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L\vf) -- (H\vf) -- (H\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L\vf) -- (H\vf) -- (H\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L\vf) -- (P\vf) -- (P\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L\vf) -- (P\vf) -- (P\vertice) -- (L\vertice);
+			\draw[red,thick] (L\vertice) -- (L\vf);
+			\draw[red,thick] (L\vertice) -- (H\vertice);
+			\draw[red,thick] (H\vertice) -- (H\vf);
+			\draw[red,thick] (L\vertice) -- (P\vertice);
+			\draw[red,thick] (P\vertice) -- (P\vf);
+		}{ % The last face
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L1) -- (H1) -- (H\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (L\vertice) -- (L1) -- (P1) -- (P\vertice) -- (L\vertice);
+			\fill[cyan!50,opacity=0.5] (H\vertice) -- (H1) -- (0,0,\h) -- (H\vertice);
+			\fill[cyan!50,opacity=0.5] (P\vertice) -- (P1) -- (0,0,-\h) -- (P\vertice);
+			\draw[red,thick] (L\vertice) -- (L1);
+			\draw[red,thick] (H\vertice) -- (H1);
+			\draw[red,thick] (L\vertice) -- (H\vertice);
+			\draw[red,thick] (P\vertice) -- (P1);
+			\draw[red,thick] (L\vertice) -- (P\vertice);
+		}
+	}
+	% fill the top face
+	\foreach \vertice in {1,2,...,\n}{
+		\pgfmathsetmacro{\vf}{\vertice+1}
+		\ifthenelse{\vertice<\n}{
+			\fill[cyan!50,opacity=0.5] (H\vertice) -- (0,0,\h) -- (H\vf) -- (H\vertice);
+			\fill[cyan!50,opacity=0.5] (P\vertice) -- (0,0,-\h) -- (P\vf) -- (P\vertice);
+		}{ % The last face
+			%\fill[cyan!50,opacity=0.5] (H1) -- (H2) -- (0,0,\h) -- (H1);
+			%\draw[red,thick] (H\vertice) -- (H1);
+		}
+	}
+\end{tikzpicture}
+%	
+\end{document}

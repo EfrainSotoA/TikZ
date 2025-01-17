@@ -1,0 +1,414 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{0.125pt}
+%
+% File name: 132-pentagon-polyhedron.tex
+% Description: 
+% A geometric representation of the Fermat right triangle themreo is shown.
+% 
+% Date of creation: 28 de julio de 2023.
+% Date of last modification: August, 26th, 2023.
+% Author: Efraín Soto Apolinar.
+% https://www.aprendematematicas.org.mx/author/efrain-soto-apolinar/instructing-courses/
+% Source: Illustrated Dictionary of Mathematical Concepts
+% https://www.aprendematematicas.org.mx/obras-distribucion-gratuita/
+%
+% Terms of use:
+% According to TikZ.net
+% https://creativecommons.org/licenses/by-nc-sa/4.0/
+% Your commitment to the terms of use is greatly appreciated.
+%
+\begin{document}
+\tdplotsetmaincoords{75}{125}
+%
+\begin{tikzpicture}[tdplot_main_coords]
+	%
+	\pgfmathsetmacro{\escala}{8.0}
+	\pgfmathsetmacro{\cero}{0.0821365}
+	\pgfmathsetmacro{\uno}{0.09687}
+	\pgfmathsetmacro{\dos}{0.13289965}
+	\pgfmathsetmacro{\tres}{0.22527241637}
+	\pgfmathsetmacro{\cuatro}{0.22975292}
+	\pgfmathsetmacro{\cinco}{0.2605816}
+	\pgfmathsetmacro{\seis}{0.35745235}
+	\pgfmathsetmacro{\siete}{0.35857017}
+	\pgfmathsetmacro{\ocho}{0.3644984}
+	\pgfmathsetmacro{\nueve}{0.42162994}
+	\pgfmathsetmacro{\diez}{0.426193644}
+	%
+	\pgfmathsetmacro{\once}{0.55909329}
+	\pgfmathsetmacro{\doce}{0.5783700521}
+	\pgfmathsetmacro{\trece}{0.5801787282}
+	\pgfmathsetmacro{\catorce}{0.59425134696}
+	\pgfmathsetmacro{\quince}{0.59702045}
+	\pgfmathsetmacro{\dieciseis}{0.641229799}
+	\pgfmathsetmacro{\diecisiete}{0.73624646}
+	\pgfmathsetmacro{\dieciocho}{0.7717323}
+	\pgfmathsetmacro{\diecinueve}{0.779082298}
+	\pgfmathsetmacro{\veinte}{0.81952376}
+	%
+	\pgfmathsetmacro{\veintiuno}{0.82249545}
+	\pgfmathsetmacro{\veintidos}{0.83895169}
+	\pgfmathsetmacro{\veintitres}{0.904631957}
+	\pgfmathsetmacro{\veinticuatro}{0.9387489}
+	\pgfmathsetmacro{\veinticinco}{0.961518877}
+	%
+	% Coordenadas de los vértices
+	
+	\coordinate(0) at (\escala * \uno, \escala * 0.0, \escala * 1.0);
+	\coordinate(1) at (\escala * \uno, \escala * 0.0, -\escala * 1.0);
+	\coordinate(2) at (-\escala * \uno, \escala * 0.0, \escala * 1.0);
+	\coordinate(3) at (-\escala * \uno, \escala * 0.0, -\escala * 1.0);
+	\coordinate(4) at (\escala * 1.0, \escala * \uno, \escala * 0.0);
+	\coordinate(5) at (\escala * 1.0, -\escala * \uno, \escala * 0.0);
+	\coordinate(6) at (-\escala * 1.0, \escala * \uno, \escala * 0.0);
+	\coordinate(7) at (-\escala * 1.0, -\escala * \uno, \escala * 0.0);
+	\coordinate(8) at (\escala * 0.0, \escala * 1.0, \escala * \uno);
+	\coordinate(9) at (\escala * 0.0, \escala * 1.0, -\escala * \uno);
+	\coordinate(10) at (\escala * 0.0, -\escala * 1.0, \escala * \uno);
+	\coordinate(11) at (\escala * 0.0, -\escala * 1.0, -\escala * \uno);
+	\coordinate(12) at (\escala * \cuatro, \escala * \tres, \escala * \veinticinco);
+	\coordinate(13) at (\escala * \cuatro, \escala * \tres, -\escala * \veinticinco);
+	\coordinate(14) at (\escala * \cuatro, -\escala * \tres, \escala * \veinticinco);
+	\coordinate(15) at (\escala * \cuatro, -\escala * \tres, -\escala * \veinticinco);
+	\coordinate(16) at (-\escala * \cuatro, \escala * \tres, \escala * \veinticinco);
+	\coordinate(17) at (-\escala * \cuatro, \escala * \tres, -\escala * \veinticinco);
+	\coordinate(18) at (-\escala * \cuatro, -\escala * \tres, \escala * \veinticinco);
+	\coordinate(19) at (-\escala * \cuatro, -\escala * \tres, -\escala * \veinticinco);
+	\coordinate(20) at (\escala * \veinticinco, \escala * \cuatro, \escala * \tres);
+	\coordinate(21) at (\escala * \veinticinco, \escala * \cuatro, -\escala * \tres);
+	\coordinate(22) at (\escala * \veinticinco, -\escala * \cuatro, \escala * \tres);
+	\coordinate(23) at (\escala * \veinticinco, -\escala * \cuatro, -\escala * \tres);
+	\coordinate(24) at (-\escala * \veinticinco, \escala * \cuatro, \escala * \tres);
+	\coordinate(25) at (-\escala * \veinticinco, \escala * \cuatro, -\escala * \tres);
+	\coordinate(26) at (-\escala * \veinticinco, -\escala * \cuatro, \escala * \tres);
+	\coordinate(27) at (-\escala * \veinticinco, -\escala * \cuatro, -\escala * \tres);
+	\coordinate(28) at (\escala * \tres, \escala * \veinticinco, \escala * \cuatro);
+	\coordinate(29) at (\escala * \tres, \escala * \veinticinco, -\escala * \cuatro);
+	\coordinate(30) at (\escala * \tres, -\escala * \veinticinco, \escala * \cuatro);
+	\coordinate(31) at (\escala * \tres, -\escala * \veinticinco, -\escala * \cuatro);
+	\coordinate(32) at (-\escala * \tres, \escala * \veinticinco, \escala * \cuatro);
+	\coordinate(33) at (-\escala * \tres, \escala * \veinticinco, -\escala * \cuatro);
+	\coordinate(34) at (-\escala * \tres, -\escala * \veinticinco, \escala * \cuatro);
+	\coordinate(35) at (-\escala * \tres, -\escala * \veinticinco, -\escala * \cuatro);
+	\coordinate(36) at (\escala * 0.0, \escala * \siete, \escala * \veinticuatro);
+	\coordinate(37) at (\escala * 0.0, \escala * \siete, -\escala * \veinticuatro);
+	\coordinate(38) at (\escala * 0.0, -\escala * \siete, \escala * \veinticuatro);
+	\coordinate(39) at (\escala * 0.0, -\escala * \siete, -\escala * \veinticuatro);
+	\coordinate(40) at (\escala * \veinticuatro, \escala * 0.0, \escala * \siete);
+	\coordinate(41) at (\escala * \veinticuatro, \escala * 0.0, -\escala * \siete);
+	\coordinate(42) at (-\escala * \veinticuatro, \escala * 0.0, \escala * \siete);
+	\coordinate(43) at (-\escala * \veinticuatro, \escala * 0.0, -\escala * \siete);
+	\coordinate(44) at (\escala * \siete, \escala * \veinticuatro, \escala * 0.0);
+	\coordinate(45) at (\escala * \siete, -\escala * \veinticuatro, \escala * 0.0);
+	\coordinate(46) at (-\escala * \siete, \escala * \veinticuatro, \escala * 0.0);
+	\coordinate(47) at (-\escala * \siete, -\escala * \veinticuatro, \escala * 0.0);
+	\coordinate(48) at (\escala * \diez, \escala * \cero, \escala * \veintitres);
+	\coordinate(49) at (\escala * \diez, \escala * \cero, -\escala * \veintitres);
+	\coordinate(50) at (\escala * \diez, -\escala * \cero, \escala * \veintitres);
+	\coordinate(51) at (\escala * \diez, -\escala * \cero, -\escala * \veintitres);
+	\coordinate(52) at (-\escala * \diez, \escala * \cero, \escala * \veintitres);
+	\coordinate(53) at (-\escala * \diez, \escala * \cero, -\escala * \veintitres);
+	\coordinate(54) at (-\escala * \diez, -\escala * \cero, \escala * \veintitres);
+	\coordinate(55) at (-\escala * \diez, -\escala * \cero, -\escala * \veintitres);
+	\coordinate(56) at (\escala * \veintitres, \escala * \diez, \escala * \cero);
+	\coordinate(57) at (\escala * \veintitres, \escala * \diez, -\escala * \cero);
+	\coordinate(58) at (\escala * \veintitres, -\escala * \diez, \escala * \cero);
+	\coordinate(59) at (\escala * \veintitres, -\escala * \diez, -\escala * \cero);
+	\coordinate(60) at (-\escala * \veintitres, \escala * \diez, \escala * \cero);
+	\coordinate(61) at (-\escala * \veintitres, \escala * \diez, -\escala * \cero);
+	\coordinate(62) at (-\escala * \veintitres, -\escala * \diez, \escala * \cero);
+	\coordinate(63) at (-\escala * \veintitres, -\escala * \diez, -\escala * \cero);
+	\coordinate(64) at (\escala * \cero, \escala * \veintitres, \escala * \diez);
+	\coordinate(65) at (\escala * \cero, \escala * \veintitres, -\escala * \diez);
+	\coordinate(66) at (\escala * \cero, -\escala * \veintitres, \escala * \diez);
+	\coordinate(67) at (\escala * \cero, -\escala * \veintitres, -\escala * \diez);
+	\coordinate(68) at (-\escala * \cero, \escala * \veintitres, \escala * \diez);
+	\coordinate(69) at (-\escala * \cero, \escala * \veintitres, -\escala * \diez);
+	\coordinate(70) at (-\escala * \cero, -\escala * \veintitres, \escala * \diez);
+	\coordinate(71) at (-\escala * \cero, -\escala * \veintitres, -\escala * \diez);
+	\coordinate(72) at (\escala * \seis, \escala * \nueve, \escala * \veintidos);
+	\coordinate(73) at (\escala * \seis, \escala * \nueve, -\escala * \veintidos);
+	\coordinate(74) at (\escala * \seis, -\escala * \nueve, \escala * \veintidos);
+	\coordinate(75) at (\escala * \seis, -\escala * \nueve, -\escala * \veintidos);
+	\coordinate(76) at (-\escala * \seis, \escala * \nueve, \escala * \veintidos);
+	\coordinate(77) at (-\escala * \seis, \escala * \nueve, -\escala * \veintidos);
+	\coordinate(78) at (-\escala * \seis, -\escala * \nueve, \escala * \veintidos);
+	\coordinate(79) at (-\escala * \seis, -\escala * \nueve, -\escala * \veintidos);
+	\coordinate(80) at (\escala * \veintidos, \escala * \seis, \escala * \nueve);
+	\coordinate(81) at (\escala * \veintidos, \escala * \seis, -\escala * \nueve);
+	\coordinate(82) at (\escala * \veintidos, -\escala * \seis, \escala * \nueve);
+	\coordinate(83) at (\escala * \veintidos, -\escala * \seis, -\escala * \nueve);
+	\coordinate(84) at (-\escala * \veintidos, \escala * \seis, \escala * \nueve);
+	\coordinate(85) at (-\escala * \veintidos, \escala * \seis, -\escala * \nueve);
+	\coordinate(86) at (-\escala * \veintidos, -\escala * \seis, \escala * \nueve);
+	\coordinate(87) at (-\escala * \veintidos, -\escala * \seis, -\escala * \nueve);
+	\coordinate(88) at (\escala * \nueve, \escala * \veintidos, \escala * \seis);
+	\coordinate(89) at (\escala * \nueve, \escala * \veintidos, -\escala * \seis);
+	\coordinate(90) at (\escala * \nueve, -\escala * \veintidos, \escala * \seis);
+	\coordinate(91) at (\escala * \nueve, -\escala * \veintidos, -\escala * \seis);
+	\coordinate(92) at (-\escala * \nueve, \escala * \veintidos, \escala * \seis);
+	\coordinate(93) at (-\escala * \nueve, \escala * \veintidos, -\escala * \seis);
+	\coordinate(94) at (-\escala * \nueve, -\escala * \veintidos, \escala * \seis);
+	\coordinate(95) at (-\escala * \nueve, -\escala * \veintidos, -\escala * \seis);
+	\coordinate(96) at (\escala * \once, \escala * \dos, \escala * \veintiuno);
+	\coordinate(97) at (\escala * \once, \escala * \dos, -\escala * \veintiuno);
+	\coordinate(98) at (\escala * \once, -\escala * \dos, \escala * \veintiuno);
+	\coordinate(99) at (\escala * \once, -\escala * \dos, -\escala * \veintiuno);
+	\coordinate(100) at (-\escala * \once, \escala * \dos, \escala * \veintiuno);
+	\coordinate(101) at (-\escala * \once, \escala * \dos, -\escala * \veintiuno);
+	\coordinate(102) at (-\escala * \once, -\escala * \dos, \escala * \veintiuno);
+	\coordinate(103) at (-\escala * \once, -\escala * \dos, -\escala * \veintiuno);
+	\coordinate(104) at (\escala * \veintiuno, \escala * \once, \escala * \dos);
+	\coordinate(105) at (\escala * \veintiuno, \escala * \once, -\escala * \dos);
+	\coordinate(106) at (\escala * \veintiuno, -\escala * \once, \escala * \dos);
+	\coordinate(107) at (\escala * \veintiuno, -\escala * \once, -\escala * \dos);
+	\coordinate(108) at (-\escala * \veintiuno, \escala * \once, \escala * \dos);
+	\coordinate(109) at (-\escala * \veintiuno, \escala * \once, -\escala * \dos);
+	\coordinate(110) at (-\escala * \veintiuno, -\escala * \once, \escala * \dos);
+	\coordinate(111) at (-\escala * \veintiuno, -\escala * \once, -\escala * \dos);
+	\coordinate(112) at (\escala * \dos, \escala * \veintiuno, \escala * \once);
+	\coordinate(113) at (\escala * \dos, \escala * \veintiuno, -\escala * \once);
+	\coordinate(114) at (\escala * \dos, -\escala * \veintiuno, \escala * \once);
+	\coordinate(115) at (\escala * \dos, -\escala * \veintiuno, -\escala * \once);
+	\coordinate(116) at (-\escala * \dos, \escala * \veintiuno, \escala * \once);
+	\coordinate(117) at (-\escala * \dos, \escala * \veintiuno, -\escala * \once);
+	\coordinate(118) at (-\escala * \dos, -\escala * \veintiuno, \escala * \once);
+	\coordinate(119) at (-\escala * \dos, -\escala * \veintiuno, -\escala * \once);
+	\coordinate(120) at (\escala * 0.0, \escala * \quince, \escala * \veinte);
+	\coordinate(121) at (\escala * 0.0, \escala * \quince, -\escala * \veinte);
+	\coordinate(122) at (\escala * 0.0, -\escala * \quince, \escala * \veinte);
+	\coordinate(123) at (\escala * 0.0, -\escala * \quince, -\escala * \veinte);
+	\coordinate(124) at (\escala * \veinte, \escala * 0.0, \escala * \quince);
+	\coordinate(125) at (\escala * \veinte, \escala * 0.0, -\escala * \quince);
+	\coordinate(126) at (-\escala * \veinte, \escala * 0.0, \escala * \quince);
+	\coordinate(127) at (-\escala * \veinte, \escala * 0.0, -\escala * \quince);
+	\coordinate(128) at (\escala * \quince, \escala * \veinte, \escala * 0.0);
+	\coordinate(129) at (\escala * \quince, -\escala * \veinte, \escala * 0.0);
+	\coordinate(130) at (-\escala * \quince, \escala * \veinte, \escala * 0.0);
+	\coordinate(131) at (-\escala * \quince, -\escala * \veinte, \escala * 0.0);
+	\coordinate(132) at (\escala * \cinco, \escala * \doce, \escala * \diecinueve);
+	\coordinate(133) at (\escala * \cinco, \escala * \doce, -\escala * \diecinueve);
+	\coordinate(134) at (\escala * \cinco, -\escala * \doce, \escala * \diecinueve);
+	\coordinate(135) at (\escala * \cinco, -\escala * \doce, -\escala * \diecinueve);
+	\coordinate(136) at (-\escala * \cinco, \escala * \doce, \escala * \diecinueve);
+	\coordinate(137) at (-\escala * \cinco, \escala * \doce, -\escala * \diecinueve);
+	\coordinate(138) at (-\escala * \cinco, -\escala * \doce, \escala * \diecinueve);
+	\coordinate(139) at (-\escala * \cinco, -\escala * \doce, -\escala * \diecinueve);
+	\coordinate(140) at (\escala * \diecinueve, \escala * \cinco, \escala * \doce);
+	\coordinate(141) at (\escala * \diecinueve, \escala * \cinco, -\escala * \doce);
+	\coordinate(142) at (\escala * \diecinueve, -\escala * \cinco, \escala * \doce);
+	\coordinate(143) at (\escala * \diecinueve, -\escala * \cinco, -\escala * \doce);
+	\coordinate(144) at (-\escala * \diecinueve, \escala * \cinco, \escala * \doce);
+	\coordinate(145) at (-\escala * \diecinueve, \escala * \cinco, -\escala * \doce);
+	\coordinate(146) at (-\escala * \diecinueve, -\escala * \cinco, \escala * \doce);
+	\coordinate(147) at (-\escala * \diecinueve, -\escala * \cinco, -\escala * \doce);
+	\coordinate(148) at (\escala * \doce, \escala * \diecinueve, \escala * \cinco);
+	\coordinate(149) at (\escala * \doce, \escala * \diecinueve, -\escala * \cinco);
+	\coordinate(150) at (\escala * \doce, -\escala * \diecinueve, \escala * \cinco);
+	\coordinate(151) at (\escala * \doce, -\escala * \diecinueve, -\escala * \cinco);
+	\coordinate(152) at (-\escala * \doce, \escala * \diecinueve, \escala * \cinco);
+	\coordinate(153) at (-\escala * \doce, \escala * \diecinueve, -\escala * \cinco);
+	\coordinate(154) at (-\escala * \doce, -\escala * \diecinueve, \escala * \cinco);
+	\coordinate(155) at (-\escala * \doce, -\escala * \diecinueve, -\escala * \cinco);
+	\coordinate(156) at (\escala * \dieciseis, \escala * 0.0, \escala * \dieciocho);
+	\coordinate(157) at (\escala * \dieciseis, \escala * 0.0, -\escala * \dieciocho);
+	\coordinate(158) at (-\escala * \dieciseis, \escala * 0.0, \escala * \dieciocho);
+	\coordinate(159) at (-\escala * \dieciseis, \escala * 0.0, -\escala * \dieciocho);
+	\coordinate(160) at (\escala * \dieciocho, \escala * \dieciseis, \escala * 0.0);
+	\coordinate(161) at (\escala * \dieciocho, -\escala * \dieciseis, \escala * 0.0);
+	\coordinate(162) at (-\escala * \dieciocho, \escala * \dieciseis, \escala * 0.0);
+	\coordinate(163) at (-\escala * \dieciocho, -\escala * \dieciseis, \escala * 0.0);
+	\coordinate(164) at (\escala * 0.0, \escala * \dieciocho, \escala * \dieciseis);
+	\coordinate(165) at (\escala * 0.0, \escala * \dieciocho, -\escala * \dieciseis);
+	\coordinate(166) at (\escala * 0.0, -\escala * \dieciocho, \escala * \dieciseis);
+	\coordinate(167) at (\escala * 0.0, -\escala * \dieciocho, -\escala * \dieciseis);
+	\coordinate(168) at (\escala * \catorce, \escala * \ocho, \escala * \diecisiete);
+	\coordinate(169) at (\escala * \catorce, \escala * \ocho, -\escala * \diecisiete);
+	\coordinate(170) at (\escala * \catorce, -\escala * \ocho, \escala * \diecisiete);
+	\coordinate(171) at (\escala * \catorce, -\escala * \ocho, -\escala * \diecisiete);
+	\coordinate(172) at (-\escala * \catorce, \escala * \ocho, \escala * \diecisiete);
+	\coordinate(173) at (-\escala * \catorce, \escala * \ocho, -\escala * \diecisiete);
+	\coordinate(174) at (-\escala * \catorce, -\escala * \ocho, \escala * \diecisiete);
+	\coordinate(175) at (-\escala * \catorce, -\escala * \ocho, -\escala * \diecisiete);
+	\coordinate(176) at (\escala * \diecisiete, \escala * \catorce, \escala * \ocho);
+	\coordinate(177) at (\escala * \diecisiete, \escala * \catorce, -\escala * \ocho);
+	\coordinate(178) at (\escala * \diecisiete, -\escala * \catorce, \escala * \ocho);
+	\coordinate(179) at (\escala * \diecisiete, -\escala * \catorce, -\escala * \ocho);
+	\coordinate(180) at (-\escala * \diecisiete, \escala * \catorce, \escala * \ocho);
+	\coordinate(181) at (-\escala * \diecisiete, \escala * \catorce, -\escala * \ocho);
+	\coordinate(182) at (-\escala * \diecisiete, -\escala * \catorce, \escala * \ocho);
+	\coordinate(183) at (-\escala * \diecisiete, -\escala * \catorce, -\escala * \ocho);
+	\coordinate(184) at (\escala * \ocho, \escala * \diecisiete, \escala * \catorce);
+	\coordinate(185) at (\escala * \ocho, \escala * \diecisiete, -\escala * \catorce);
+	\coordinate(186) at (\escala * \ocho, -\escala * \diecisiete, \escala * \catorce);
+	\coordinate(187) at (\escala * \ocho, -\escala * \diecisiete, -\escala * \catorce);
+	\coordinate(188) at (-\escala * \ocho, \escala * \diecisiete, \escala * \catorce);
+	\coordinate(189) at (-\escala * \ocho, \escala * \diecisiete, -\escala * \catorce);
+	\coordinate(190) at (-\escala * \ocho, -\escala * \diecisiete, \escala * \catorce);
+	\coordinate(191) at (-\escala * \ocho, -\escala * \diecisiete, -\escala * \catorce);
+	\coordinate(192) at (\escala * \trece, \escala * \trece, \escala * \trece);
+	\coordinate(193) at (\escala * \trece, \escala * \trece, -\escala * \trece);
+	\coordinate(194) at (\escala * \trece, -\escala * \trece, \escala * \trece);
+	\coordinate(195) at (\escala * \trece, -\escala * \trece, -\escala * \trece);
+	\coordinate(196) at (-\escala * \trece, \escala * \trece, \escala * \trece);
+	\coordinate(197) at (-\escala * \trece, \escala * \trece, -\escala * \trece);
+	\coordinate(198) at (-\escala * \trece, -\escala * \trece, \escala * \trece);
+	\coordinate(199) at (-\escala * \trece, -\escala * \trece, -\escala * \trece);
+	%
+	% Faces of the polyhedron
+	%
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (37) -- (13) -- (1) -- (3) -- (17) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (158) -- (102) -- (54) -- (52) -- (100) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (159) -- (101) -- (53) -- (55) -- (103) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (162) -- (109) -- (61) -- (60) -- (108) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (163) -- (110) -- (62) -- (63) -- (111) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (166) -- (118) -- (70) -- (66) -- (114) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (167) -- (115) -- (67) -- (71) -- (119) -- cycle;
+	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (37) -- (17) -- (77) -- (137) -- (121) -- cycle;
+	
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (38) -- (18) -- (78) -- (138) -- (122) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (39) -- (15) -- (75) -- (135) -- (123) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (15) -- (51) -- (99) -- (171) -- (75) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (39) -- (123) -- (139) -- (79) -- (19) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (39) -- (19) -- (3) -- (1) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (42) -- (24) -- (6) -- (7) -- (26) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (42) -- (26) -- (86) -- (146) -- (126) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (42) -- (126) -- (144) -- (84) -- (24) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (43) -- (25) -- (85) -- (145) -- (127) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (43) -- (127) -- (147) -- (87) -- (27) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (43) -- (27) -- (7) -- (6) -- (25) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (45) -- (30) -- (10) -- (11) -- (31) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (45) -- (31) -- (91) -- (151) -- (129) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (45) -- (129) -- (150) -- (90) -- (30) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (47) -- (34) -- (94) -- (154) -- (131) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (47) -- (131) -- (155) -- (95) -- (35) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (47) -- (35) -- (11) -- (10) -- (34) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (195) -- (179) -- (151) -- (91) -- (187) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (195) -- (187) -- (135) -- (75) -- (171) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (197) -- (173) -- (145) -- (85) -- (181) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (197) -- (181) -- (153) -- (93) -- (189) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (197) -- (189) -- (137) -- (77) -- (173) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (198) -- (174) -- (146) -- (86) -- (182) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (198) -- (182) -- (154) -- (94) -- (190) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (198) -- (190) -- (138) -- (78) -- (174) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (199) -- (175) -- (79) -- (139) -- (191) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (199) -- (191) -- (95) -- (155) -- (183) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (199) -- (183) -- (87) -- (147) -- (175) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (1) -- (13) -- (49) -- (51) -- (15) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (3) -- (19) -- (55) -- (53) -- (17) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (6) -- (24) -- (60) -- (61) -- (25) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (7) -- (27) -- (63) -- (62) -- (26) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (10) -- (30) -- (66) -- (70) -- (34) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (11) -- (35) -- (71) -- (67) -- (31) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (13) -- (73) -- (169) -- (97) -- (49) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (17) -- (53) -- (101) -- (173) -- (77) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (18) -- (54) -- (102) -- (174) -- (78) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (19) -- (79) -- (175) -- (103) -- (55) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (25) -- (61) -- (109) -- (181) -- (85) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (26) -- (62) -- (110) -- (182) -- (86) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (27) -- (87) -- (183) -- (111) -- (63) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (30) -- (90) -- (186) -- (114) -- (66) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (31) -- (67) -- (115) -- (187) -- (91) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (34) -- (70) -- (118) -- (190) -- (94) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (35) -- (95) -- (191) -- (119) -- (71) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (100) -- (172) -- (144) -- (126) -- (158) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (101) -- (159) -- (127) -- (145) -- (173) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (102) -- (158) -- (126) -- (146) -- (174) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (103) -- (175) -- (147) -- (127) -- (159) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (106) -- (178) -- (150) -- (129) -- (161) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (108) -- (180) -- (152) -- (130) -- (162) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (109) -- (162) -- (130) -- (153) -- (181) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (110) -- (163) -- (131) -- (154) -- (182) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (111) -- (183) -- (155) -- (131) -- (163) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (113) -- (185) -- (133) -- (121) -- (165) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (114) -- (186) -- (134) -- (122) -- (166) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (115) -- (167) -- (123) -- (135) -- (187) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (117) -- (165) -- (121) -- (137) -- (189) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (118) -- (166) -- (122) -- (138) -- (190) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (119) -- (191) -- (139) -- (123) -- (167) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (165) -- (117) -- (69) -- (65) -- (113) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (29) -- (89) -- (185) -- (113) -- (65) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (196) -- (180) -- (84) -- (144) -- (172) -- cycle;
+
+	%
+	%
+	%
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (99) -- (157) -- (125) -- (143) -- (171) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (37) -- (121) -- (133) -- (73) -- (13) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (2) -- (16) -- (52) -- (54) -- (18) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (16) -- (76) -- (172) -- (100) -- (52) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (0) -- (14) -- (50) -- (48) -- (12) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (24) -- (84) -- (180) -- (108) -- (60) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (164) -- (112) -- (64) -- (68) -- (116) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (38) -- (14) -- (0) -- (2) -- (18) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (38) -- (122) -- (134) -- (74) -- (14) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (14) -- (74) -- (170) -- (98) -- (50) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (194) -- (170) -- (74) -- (134) -- (186) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (194) -- (178) -- (82) -- (142) -- (170) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (194) -- (186) -- (90) -- (150) -- (178) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (40) -- (124) -- (142) -- (82) -- (22) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (22) -- (82) -- (178) -- (106) -- (58) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (40) -- (22) -- (5) -- (4) -- (20) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (5) -- (22) -- (58) -- (59) -- (23) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (161) -- (107) -- (59) -- (58) -- (106) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (41) -- (21) -- (4) -- (5) -- (23) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (160) -- (104) -- (56) -- (57) -- (105) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (104) -- (160) -- (128) -- (148) -- (176) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (41) -- (125) -- (141) -- (81) -- (21) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (193) -- (177) -- (81) -- (141) -- (169) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (23) -- (59) -- (107) -- (179) -- (83) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (107) -- (161) -- (129) -- (151) -- (179) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (41) -- (23) -- (83) -- (143) -- (125) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (195) -- (171) -- (143) -- (83) -- (179) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (192) -- (184) -- (132) -- (72) -- (168) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (192) -- (176) -- (148) -- (88) -- (184) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (36) -- (16) -- (2) -- (0) -- (12) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (112) -- (164) -- (120) -- (132) -- (184) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (116) -- (188) -- (136) -- (120) -- (164) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (20) -- (56) -- (104) -- (176) -- (80) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (44) -- (28) -- (88) -- (148) -- (128) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (44) -- (128) -- (149) -- (89) -- (29) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (44) -- (29) -- (9) -- (8) -- (28) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (8) -- (32) -- (68) -- (64) -- (28) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (28) -- (64) -- (112) -- (184) -- (88) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (4) -- (21) -- (57) -- (56) -- (20) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (21) -- (81) -- (177) -- (105) -- (57) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (46) -- (32) -- (8) -- (9) -- (33) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (193) -- (185) -- (89) -- (149) -- (177) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (105) -- (177) -- (149) -- (128) -- (160) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (193) -- (169) -- (73) -- (133) -- (185) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (9) -- (29) -- (65) -- (69) -- (33) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (33) -- (69) -- (117) -- (189) -- (93) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (196) -- (172) -- (76) -- (136) -- (188) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (32) -- (92) -- (188) -- (116) -- (68) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (196) -- (188) -- (92) -- (152) -- (180) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (46) -- (130) -- (152) -- (92) -- (32) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (46) -- (33) -- (93) -- (153) -- (130) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (156) -- (96) -- (48) -- (50) -- (98) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (12) -- (48) -- (96) -- (168) -- (72) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (96) -- (156) -- (124) -- (140) -- (168) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (98) -- (170) -- (142) -- (124) -- (156) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (40) -- (20) -- (80) -- (140) -- (124) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (192) -- (168) -- (140) -- (80) -- (176) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (157) -- (99) -- (51) -- (49) -- (97) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (97) -- (169) -- (141) -- (125) -- (157) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (36) -- (12) -- (72) -- (132) -- (120) -- cycle;
+	\draw[red,thick,fill=cyan!35,opacity=0.75]  (36) -- (120) -- (136) -- (76) -- (16) -- cycle;	
+	%
+	% Los vértices del poliedro
+	%
+%	\foreach \punto in {0,1,...,199}{
+%		\fill[blue] (\punto) circle (1.5pt) node [above] {\tiny$\punto$};
+%	}
+	%
+	\end{tikzpicture}
+	%
+\end{document}
+
+
+
